@@ -1,4 +1,4 @@
-clear; clc; close all;
+% clear; clc; close all;
 
 %% Problem Setup
 if(~exist("tf", "var"))
@@ -48,8 +48,8 @@ tic;
 toc;
 fprintf("Finished Solving MATLAB Code\n");
 
-%% Benchmark Test
-load('Benchmark_B747_FC5.mat');
+% %% Benchmark Test
+% load('Benchmark_B747_FC5.mat');
 
 %% Results
 Sim_states.u=Sim_states.u.Data.';Sim_states.v=Sim_states.v.Data.';Sim_states.w=Sim_states.w.Data.';

@@ -1,0 +1,7527 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{quran}
+\usepackage{polyglossia}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{sectsty}
+\usepackage{subfig}
+\usepackage{caption}
+\usepackage{wallpaper}
+\usepackage{url}
+\usepackage{appendix}
+%% uncomment this if you're using beamer presentations
+%\usepackage{calc}
+%\usepackage{datetime}
+%\usepackage{pdflscape}
+%\usepackage{chngcntr}
+%\usepackage{multimedia}
+%\usepackage{animate}
+\usepackage{bidi} 
+
+%\ThisCenterWallPaper{.5}{back.jpg}
+
+% uncomment this if you're using beamer poster
+%\PassOptionsToPackage{%
+%   orientation=portrait, % possible: portrait, landscape
+%    size=a0,% possible: a0b, a0, a1, a2, a3, a4, custom (with width=<val>,height=<val>)
+%    scale=1.4,% scaling of fonts
+%    debug% give verbose warnings and error messages
+%}{beamerposter}
+
+% uncomment this if you're using beamer for presentations
+%\usetheme{PaloAlto}
+%\usecolortheme{sidebartab}
+%\usecolortheme{rose}
+%\setbeamertemplate{blocks}[rounded]
+
+%\allowdisplaybreaks
+
+%\let\makebeamertitle\relax
+%% best available temps: Goettingen CambridgeUS Copenhagen Singapore Warsaw Dresden Frankfurt
+
+%Format of the code listing caption
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\linewidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+
+
+%\setmainlanguage{english}
+%\setotherlanguage{arabic}
+%\chapterfont{\color{teal}}
+%\partfont{\color{teal}}
+%\sectionfont{\color{teal}}
+%\subsectionfont{\color{teal}}
+%\subsubsectionfont{\color{teal}}
+%\setmainfont{LM Roman 10}
+%% use this only in two-column documents, also,
+%% you might want to change the margin for a two-column doc
+%\setlength{\columnseprule}{0.0pt}
+%\setlength{\columnsep}{1cm} %you don't need this if you edited the separation margin in the settings of margin
+%
+%
+%
+\renewcommand{\arraystretch}{2}
+%\setlength{\extrarowheight}{1.5em}
+%
+%
+%% This code below is from user karlkoeller on stackoverflow
+%% https://tex.stackexchange.com/a/366170
+%\makeatletter
+%\renewenvironment{abstract}{%
+%    \if@twocolumn
+%      \section*{\abstractname}%
+%    \else %% <- here I've removed \small
+%      \begin{center}%
+%        {\bfseries \Large\abstractname\vspace{\z@}}%  %% <- here I've added \Large
+%      \end{center}%
+%      \quotation
+%    \fi}
+%    {\if@twocolumn\else\endquotation\fi}
+%\makeatother
+%
+%
+%
+% these lines below are from user David Woitkowski
+%% It is to edit title font
+%\makeatletter\meaning\@maketitle\makeatother 
+\makeatletter
+\def\@maketitle{
+	\newpage
+	\null
+	\vskip 1.5em
+	\begin {center}
+	\let \footnote \thanks
+	\let \LTRfootnote \LTRthanks
+	\let \RTLfootnote \RTLthanks
+	{\Huge  \bfseries \color{black} \@title \par }
+	\vskip 2em
+	{	\large
+		\lineskip .5em
+%		\begin {tabular}[t]{c}
+		{\bfseries \color{black} \@author }
+%		\end {tabular}
+		\par
+	}
+	\vskip 1.5em
+	{\large \@date }
+	\end {center}
+	\par
+	\vskip 2em
+}
+
+
+%\makeatother
+%
+%
+%
+%
+%
+
+\lstdefinelanguage{myMatlab}{
+  language     = Matlab,
+  morekeywords = {inf,Inf,nan,NaN,true,false,warning,error,groot,clearvars,switch,case,otherwise,continue,classdef,handle,Abstract,AllowedSubclasses,Hidden,Sealed,properties,methods,Access,SetAccess,GetAccess,protected,private},
+  morestring=**[d]{"}
+}
+
+\newcommand*{\blankpage}{%
+  \begin{otherlanguage}{english}
+	\thispagestyle{empty}
+    \vspace*{\fill}
+%    \hfill
+    \begin{center}
+      \emph{This page is intentionally left blank!}
+    \end{center}
+    \vspace{\fill}
+%    \thispagestyle{empty}
+  \end{otherlanguage}
+  \clearpage
+}
+
+
+\makeatletter
+\renewcommand*\cleardoublepage{\clearpage%
+    \if@twoside
+        \ifodd\c@page\else
+        \blankpage
+        \fi
+    \fi
+}
+\makeatother
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "Amiri"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 3
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=blue,anchorcolor=blue,filecolor=blue,menucolor=blue,runcolor=blue,urlcolor=blue,citecolor=blue,pdfpagelayout=TwoPageRight,pdfstartview=Fit"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2.5cm
+\rightmargin 1.8cm
+\bottommargin 2.5cm
+\headsep 0.4cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\listings_params "breaklines=true,numbers=left,commentstyle={\color[rgb]{0,0.5,0}},keywordstyle={\color{blue}},stringstyle={\color{magenta}},tabsize=4,basicstyle={\ttfamily},columns=fullflexible"
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset Graphics
+	filename /home/ahmed/ENG/journalThumbnail_en_US.jpg
+	width 3cm
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/Logo.png
+	width 3.5cm
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Autopilot
+\end_layout
+
+\begin_layout Author
+Team 14
+\end_layout
+
+\begin_layout Standard
+\align center
+Submitted to:
+\begin_inset Newline newline
+\end_inset
+
+Dr.
+ Osamah Mohammedy
+\begin_inset Newline newline
+\end_inset
+
+Eng.
+ Mahmoud Gamal
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Section
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B.N.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ahmed Salah Hammad Ahmed
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ola Mostafa AbdelMo'ty
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+36
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fouad Tarek Mostafa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+39
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mohammed Ahmed Roqayah
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mohammed Osamah AbdelRasheed
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mohamed El-Shahat Saad Mohammed
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Research Review
+\end_layout
+
+\begin_layout Section
+Autopilot Introduction
+\end_layout
+
+\begin_layout Standard
+An autopilot is a system used to control the path of an aircraft, marine
+ craft, or spacecraft without requiring constant manual control by a human
+ operator.
+ Its main objective is to assist the operator's control of the vehicle,
+ allowing the operator to focus on broader aspects of operations, such as
+ monitoring the trajectory, weather, and onboard systems.
+\end_layout
+
+\begin_layout Standard
+The first aircraft autopilot was developed by Sperry Corporation in 1912.
+ The main purpose of early autopilots was to stabilize the aircraft and
+ return it to the desired flight attitude after any disturbance.
+ Such an autopilot was installed in a Glenn H.
+ Curtis flying boat and first tested in late 1912.
+ The autopilot, using gyros to sense the deviation of the aircraft from
+ the desired attitude and servo motors to activate the elevators and ailerons,
+ was developed and built by the Sperry Gyroscope Company of New York under
+ the direction of Dr.
+ E.
+ A.
+ Sperry (Blakelock, 1991, p.
+ 1).
+\end_layout
+
+\begin_layout Section
+Inputs and Outputs of an Autopilot from a control systems perspective
+\end_layout
+
+\begin_layout Standard
+From a control systems perspective, an autopilot system onboard an airplane
+ processes various inputs and generates corresponding outputs:
+\end_layout
+
+\begin_layout Description
+Inputs: Desired/Commanded States: These include target parameters such as
+ heading, altitude, airspeed, and flight path, which can be set by the pilot
+ or pre-programmed into the flight management system.
+ Sensor Data: Information from onboard sensors, including gyroscopes, accelerome
+ters, magnetometers, GPS, barometers, and airspeed indicators, providing
+ real-time data on the aircraft's current state.
+\end_layout
+
+\begin_layout Description
+Outputs: Actuator Commands: Signals sent to control surface actuators (e.g.,
+ ailerons, elevators, rudder) and throttle controls to adjust the aircraft's
+ attitude, altitude, and speed to match the desired states.
+\end_layout
+
+\begin_layout Section
+Role of the pilot in an airplane
+\end_layout
+
+\begin_layout Standard
+In an airplane equipped with an autopilot, the pilot's role includes:
+\end_layout
+
+\begin_layout Description
+Monitoring: Continuously overseeing the autopilot's performance to ensure
+ it is operating correctly and making appropriate adjustments as necessary.
+\end_layout
+
+\begin_layout Description
+Decision-Making: Making strategic decisions regarding flight path, altitude
+ changes, and responses to air traffic control instructions.
+\end_layout
+
+\begin_layout Description
+Manual Control: Taking manual control of the aircraft during critical phases
+ of flight, such as takeoff and landing, or in situations where autopilot
+ use is not appropriate.
+\end_layout
+
+\begin_layout Description
+System Management: Managing and programming the flight management system
+ and autopilot settings to ensure alignment with the intended flight plan.
+\end_layout
+
+\begin_layout Section
+Difference between an Autopilot & SAS (stability augmentation system)
+\end_layout
+
+\begin_layout Standard
+An autopilot is a system designed to control the trajectory of an aircraft
+ without requiring constant hands-on control from a human operator.
+ It performs various functions such as maintaining a set altitude, keeping
+ a constant airspeed, and following a pre-set route using navigation aids
+ like VOR (VHF Omnidirectional Range) and ILS (Instrument Landing System).
+ Additionally, it manages the flight plan and optimizes the route through
+ flight management systems.
+\end_layout
+
+\begin_layout Standard
+On the other hand, a Stability Augmentation System (SAS) is intended to
+ enhance the stability of an aircraft, especially in turbulent conditions.
+ It helps stabilize the aircraft against pitch, roll, and yaw disturbances.
+ Key features of SAS include short-term attitude stabilization, augmentation
+ of pilot input to reduce workload, and providing stability during manual
+ control to allow the pilot to focus on other tasks.
+\end_layout
+
+\begin_layout Standard
+The primary differences between Autopilot and SAS are as follows:
+\end_layout
+
+\begin_layout Enumerate
+Functionality: While the Autopilot performs a wide range of functions including
+ navigation and maintaining specific flight parameters, SAS primarily focuses
+ on stabilizing the aircraft.
+\end_layout
+
+\begin_layout Enumerate
+Control: The Autopilot can take over complete control of the aircraft for
+ extended periods, whereas SAS assists the pilot without taking over full
+ control.
+\end_layout
+
+\begin_layout Enumerate
+Complexity: Autopilot systems are generally more complex and sophisticated
+ compared to SAS.
+\end_layout
+
+\begin_layout Section
+Role of the onboard sensors like (GPS, gyroscopes, ..etc.)
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="4cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quantities Measured
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Typical Sampling Rates
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GPS Receiver
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Provides position (latitude, longitude, altitude) and ground speed.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 Hz to 10 Hz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gyroscopes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Measure angular velocity around the aircraft's axes (roll, pitch, yaw).
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50 Hz to 1000 Hz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Accelerometers
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Measure linear acceleration along the aircraft's axes.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50 Hz to 1000 Hz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Magnetometers
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Measure the Earth's magnetic field to determine heading.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10 Hz to 100 Hz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Barometric Altimeter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Measures static air pressure to determine altitude above sea level.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 Hz to 10 Hz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Airspeed Indicator
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Measures dynamic air pressure to determine the aircraft's airspeed.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 Hz to 10 Hz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Inertial Measurement Unit (IMU)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Combines gyroscopes, accelerometers, and sometimes magnetometers to provide
+ comprehensive motion data.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50 Hz to 1000 Hz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Unmeasured States in the airplane equations state space model
+\end_layout
+
+\begin_layout Standard
+If a particular state is not directly measured by a sensor, it can be estimated
+ using sensor fusion techniques and mathematical models.
+ One common method is the use of a Kalman filter, which combines data from
+ multiple sensors and applies a predictive model to estimate the unmeasured
+ state with a certain level of confidence.
+ This approach allows for the reconstruction of unmeasured states based
+ on available sensor data and system dynamics.
+\end_layout
+
+\begin_layout Section
+Fly-by-Wire flight control system
+\end_layout
+
+\begin_layout Standard
+Fly-by-Wire (FBW) is the generally accepted term for those flight control
+ systems which use computers to process the flight control inputs made by
+ the pilot or autopilot, and send corresponding electrical signals to the
+ flight control surface actuators.
+ This arrangement replaces mechanical linkage and means that the pilot inputs
+ do not directly move the control surfaces.
+ Instead, inputs are read by a computer that in turn determines how to move
+ the control surfaces to best achieve what the pilot wants in accordance
+ with which of the available Flight Control Laws is active.
+\end_layout
+
+\begin_layout Section
+Open Source Autopilot Software to be used on UAVs
+\end_layout
+
+\begin_layout Description
+PX4: PX4 is an open source flight control software for drones and other
+ unmanned vehicles.
+\end_layout
+
+\begin_layout Description
+ArduPilot: ArduPilot is open source software that runs on a wide range of
+ hardware.
+ ArduPilot enables the creation and use of trusted, autonomous, unmanned
+ vehicle systems for the peaceful benefit of all.
+\end_layout
+
+\begin_layout Section
+Autopilot Hardware that can be used on UAVs
+\end_layout
+
+\begin_layout Description
+Pixhawk: A popular open-source flight controller hardware platform that
+ supports various autopilot software, including ArduPilot and PX4.
+ It features a range of sensors and interfaces suitable for UAV applications.
+\end_layout
+
+\begin_layout Description
+Navio2: A hardware add-on for the Raspberry Pi that turns it into a full-feature
+d autopilot.
+ It supports ArduPilot software and provides IMU, barometer, GPS, and other
+ essential sensors for UAV control.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Flight Mechanics Review
+\end_layout
+
+\begin_layout Section
+General Rigid Body Dynamics (RBD) equations in 3D Space
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Nonlinear 6DOF RBD Equations"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These equations are divided into translational motion and rotational motion:
+\end_layout
+
+\begin_layout Subsection
+Translational Motion (Newton's Second Law)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum\vec{F}=m\vec{a}=m\frac{\partial\vec{v}}{\partial t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $\sum\vec{F}$
+\end_inset
+
+ : Total external force acting on the body.
+ 
+\begin_inset Formula $m$
+\end_inset
+
+: mass of the rigid body.
+ 
+\begin_inset Formula $\vec{a}$
+\end_inset
+
+: linear acceleration of the center of mass In component form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\sum\vec{F_{x}} & = & m\vec{a_{x}}\\
+\sum\vec{F_{y}} & = & m\vec{a_{y}}\\
+\sum\vec{F_{z}} & = & m\vec{a_{z}}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Which eventually reduce to:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccc}
+X-mgS\theta & = & m\left(\dot{u}+qw-rv\right)\\
+Y+mgC\theta S\phi & = & m\left(\dot{v}+ru-pw\right)\\
+Z+mgC\theta C\phi & = & m\left(\dot{w}+pv-qu\right)
+\end{array}\label{eq:F=ma}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Rotational Motion (Euler's Equations of Motion)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum\vec{M}=I\vec{\alpha}+\vec{\omega}\times\left(I\vec{\omega}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $\sum\vec{M}$
+\end_inset
+
+: Total external moment acting on the body about its center of mass.
+ 
+\begin_inset Formula $I$
+\end_inset
+
+: Moment of inertia tensor.
+ 
+\begin_inset Formula $\alpha$
+\end_inset
+
+: angular acceleration.
+ 
+\begin_inset Formula $\vec{\omega}$
+\end_inset
+
+: angular velocity.
+ In component form for principal axes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\sum\vec{M_{x}} & = & I_{x}\dot{\omega}_{x}-\left(I_{y}-I_{z}\right)\omega_{y}\omega_{z}\\
+\sum\vec{M_{y}} & = & I_{y}\dot{\omega}_{y}-\left(I_{z}-I_{x}\right)\omega_{z}\omega_{x}\\
+\sum\vec{M_{z}} & = & I_{z}\dot{\omega}_{z}-\left(I_{x}-I_{y}\right)\omega_{x}\omega_{y}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Which reduce to:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccc}
+L & = & I_{x}\dot{p}-I_{xz}\dot{r}+qr\left(I_{z}-I_{y}\right)-I_{xz}pq\\
+M & = & I_{y}\dot{q}+rp\left(I_{x}-I_{z}\right)+I_{xz}\left(p^{2}-r^{2}\right)\\
+N & = & -I_{xz}\dot{p}+I_{z}\dot{r}+pq\left(I_{y}-I_{x}\right)+I_{xz}qr
+\end{array}\label{eq:M=Iw}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Kinematic Equations for Position
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccc}
+\dot{x}_{E} & = & C\theta C\psi\,u_{b}+\left(S\phi S\theta C\psi-C\phi S\psi\right)v_{b}+\left(C\phi S\theta C\psi+S\phi S\psi\right)w_{b}\\
+\dot{y}_{E} & = & C\theta S\psi\,u_{b}+\left(S\phi S\theta S\psi+C\phi C\psi\right)v_{b}+\left(C\phi S\theta S\psi-S\phi C\psi\right)w_{b}\\
+\dot{z}_{E} & = & -S\theta\,u_{b}+S\phi C\theta\,v_{b}+C\phi C\theta\,w_{b}
+\end{array}\label{eq:kinematicsPosition}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Kinematic Equations for Orientation
+\end_layout
+
+\begin_layout Standard
+The kinematic equations relate angular velocity to orientation changes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccc}
+\dot{\phi} & = & p+q\sin\left(\phi\right)\tan\left(\theta\right)+r\cos\left(\phi\right)\tan\left(\theta\right)\\
+\dot{\theta} & = & q\cos\left(\phi\right)-r\sin\left(\phi\right)\\
+\dot{\psi} & = & q\frac{\sin\left(\phi\right)}{\cos\left(\theta\right)}+r\frac{\cos\left(\phi\right)}{\cos\left(\theta\right)}
+\end{array}\label{eq:KinematicsRotation}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where: 
+\begin_inset Formula $p$
+\end_inset
+
+, 
+\begin_inset Formula $q$
+\end_inset
+
+, 
+\begin_inset Formula $r$
+\end_inset
+
+: Angular velocity components about the body-fixed axes.
+ while 
+\begin_inset Formula $\phi$
+\end_inset
+
+, 
+\begin_inset Formula $\theta$
+\end_inset
+
+, 
+\begin_inset Formula $\psi$
+\end_inset
+
+: Euler angles (roll, pitch, yaw).
+\end_layout
+
+\begin_layout Standard
+The 12 equations of motion consist of:
+\end_layout
+
+\begin_layout Itemize
+6 Kinetics Equations:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+3 translational equations (
+\begin_inset Formula $F_{X}$
+\end_inset
+
+, 
+\begin_inset Formula $F_{Y}$
+\end_inset
+
+, 
+\begin_inset Formula $F_{Z}$
+\end_inset
+
+); equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:F=ma"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+3 Rotational equations (
+\begin_inset Formula $M_{X}$
+\end_inset
+
+, 
+\begin_inset Formula $M_{Y}$
+\end_inset
+
+, 
+\begin_inset Formula $M_{Z}$
+\end_inset
+
+); equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:M=Iw"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+6 Kinematics Equations:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+3 for position (
+\begin_inset Formula $x$
+\end_inset
+
+ , 
+\begin_inset Formula $y$
+\end_inset
+
+ , 
+\begin_inset Formula $z$
+\end_inset
+
+); equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:kinematicsPosition"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+3 for rotation (
+\begin_inset Formula $\phi$
+\end_inset
+
+, 
+\begin_inset Formula $\theta$
+\end_inset
+
+, 
+\begin_inset Formula $\psi$
+\end_inset
+
+); equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:KinematicsRotation"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Equations added to the (RBD) equations to form the Fixed wing Airplanes
+ (EOM)
+\end_layout
+
+\begin_layout Standard
+To adapt the general RBD equations for fixed wing airplanes, additional
+ forces and moments specific to aerodynamics are introduced:
+\end_layout
+
+\begin_layout Enumerate
+Aerodynamic Forces:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Lift (
+\begin_inset Formula $L=C_{L}qS$
+\end_inset
+
+): Acts perpendicular to the relative airflow.
+\end_layout
+
+\begin_layout Enumerate
+Drag (
+\begin_inset Formula $D=C_{D}qS$
+\end_inset
+
+): Acts opposite to the relative airflow.
+\end_layout
+
+\begin_layout Enumerate
+Side force(
+\begin_inset Formula $Y=C_{Y}qS$
+\end_inset
+
+): Acts laterally.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Aerodynamic Moments:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Rolling moment(
+\begin_inset Formula $L=C_{l}qSb$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Enumerate
+Pitching moment(
+\begin_inset Formula $M=C_{m}qSc$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Enumerate
+Yawing moment (
+\begin_inset Formula $N=C_{n}qSb$
+\end_inset
+
+)
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Propulsive Forces: Include thrust forces generated by engines.
+\end_layout
+
+\begin_layout Enumerate
+Gravitational Force: Accounts for weight acting downward (W=mg)
+\end_layout
+
+\begin_layout Standard
+These forces and moments are added to the general RBD equations to form
+ the airplane-specific EOM.
+ Here:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $C_{L}$
+\end_inset
+
+ , 
+\begin_inset Formula $C_{D}$
+\end_inset
+
+ , 
+\begin_inset Formula $C_{Y}$
+\end_inset
+
+, 
+\begin_inset Formula $C_{l}$
+\end_inset
+
+, 
+\begin_inset Formula $C_{m}$
+\end_inset
+
+, 
+\begin_inset Formula $C_{n}$
+\end_inset
+
+: Aerodynamic coefficients.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $q=\frac{1}{2}\rho V^{2}$
+\end_inset
+
+: Dynamic Pressure.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $S$
+\end_inset
+
+, 
+\begin_inset Formula $b$
+\end_inset
+
+, 
+\begin_inset Formula $c$
+\end_inset
+
+: Wing area, span, and chord length.
+\end_layout
+
+\begin_layout Section
+Assumptions introduced while deriving the airplane equations of motion
+\end_layout
+
+\begin_layout Itemize
+Rigid Body Assumption: The airplane is treated as a rigid body with no deformati
+on.
+\end_layout
+
+\begin_layout Itemize
+Small Angle Approximations: For small perturbations from equilibrium flight
+ conditions (linearized models).
+\end_layout
+
+\begin_layout Itemize
+Steady Aerodynamics: Assumes aerodynamic forces depend only on instantaneous
+ velocity and orientation (ignores unsteady effects).
+\end_layout
+
+\begin_layout Itemize
+Flat Earth Assumption: Neglects curvature of the Earth for short-range flights.
+\end_layout
+
+\begin_layout Itemize
+Constant Mass Distribution: Assumes no significant fuel consumption or payload
+ changes during flight.
+\end_layout
+
+\begin_layout Itemize
+Symmetry: Assumes lateral symmetry about the longitudinal axis.
+\end_layout
+
+\begin_layout Section
+Classification of an aircraft's equations of motion
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Order The equations of motion for an aircraft are typically 
+\begin_inset Formula $1^{st.}$
+\end_inset
+
+ order differential equations because they involve the second derivative
+ of position and orientation with respect to time (acceleration).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Type The EOMs are ordinary differential equations (ODEs) rather than partial
+ differential equations (PDEs) since they depend on time derivatives rather
+ than spatial derivatives.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Linearity The general form of aircraft EOMs is nonlinear due to aerodynamic
+ forces and moments, which depend on velocity, angles, and control inputs
+ in a nonlinear manner.
+\begin_inset Newline newline
+\end_inset
+
+However, for small perturbations around an equilibrium point (such as level
+ flight), they can be linearized to simplify analysis.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Coupling The aircraft EOMs are generally coupled, meaning that motion in
+ one axis (e.g., pitch) affects motion in another (e.g., roll or yaw).
+\begin_inset Newline newline
+\end_inset
+
+However, under certain assumptions (such as decoupling longitudinal and
+ lateral dynamics), the equations can be approximated as uncoupled for analysis.
+\end_layout
+
+\begin_layout Section
+Difference between the (Body axes) and the (earth or inertial axes)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/ReferenceAnglesXY.png
+	display false
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/ReferenceAnglesXZ.png
+	display false
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Body and Inertial Axes, Images ref.: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Aircraft_Flight_Mechanics_website"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Body Axes (Body-Fixed Frame)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Definition: A coordinate system that moves with the aircraft, with its origin
+ fixed at the aircraft's center of gravity (CG).
+\end_layout
+
+\begin_layout Enumerate
+Axes Orientation:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+X-axis (Forward Axis): Points along the aircraft’s nose (longitudinal axis).
+\end_layout
+
+\begin_layout Enumerate
+Y-axis (Lateral Axis): Points towards the right wing (perpendicular to the
+ X-axis).
+\end_layout
+
+\begin_layout Enumerate
+Z-axis (Vertical Axis): Points downward, perpendicular to the X-Y plane
+ (opposite to the lift direction in level flight).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Characteristics:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Rotates and translates with the aircraft.
+\end_layout
+
+\begin_layout Enumerate
+Used to express aerodynamic forces, moments, and control inputs.
+\end_layout
+
+\begin_layout Enumerate
+Orientation changes as the aircraft maneuvers.
+\end_layout
+
+\begin_layout Enumerate
+Wind tunnel data and aerodynamic coefficients are often expressed in body
+ axes.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Earth Axes (Inertial or Navigation Frame)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Definition: A fixed coordinate system that does not move with the aircraft;
+ it is typically referenced to the Earth or an inertial frame.
+\end_layout
+
+\begin_layout Enumerate
+Axes Orientation:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+X-axis: Points North (or along a chosen reference direction).
+\end_layout
+
+\begin_layout Enumerate
+Y-axis: Points East.
+\end_layout
+
+\begin_layout Enumerate
+Z-axis: Points downward toward the center of the Earth (opposite to altitude
+ increase).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Characteristics:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Used to describe absolute motion relative to the Earth.
+\end_layout
+
+\begin_layout Enumerate
+Does not change with aircraft movement.
+\end_layout
+
+\begin_layout Enumerate
+Used in navigation, trajectory analysis, and flight planning.
+\end_layout
+
+\begin_layout Enumerate
+Important in inertial navigation systems (INS) and GPS-based positioning.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+Difference between the pitch angle 
+\begin_inset Formula $(\theta)$
+\end_inset
+
+ and the angle of attack 
+\begin_inset Formula $(\alpha)$
+\end_inset
+
+, and between the sideslip angle 
+\begin_inset Formula $(\beta)$
+\end_inset
+
+ and the heading angle 
+\begin_inset Formula $(\psi)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/anglesen.png
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../Images/sideslip angle.png
+	width 25page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Image source: 
+\begin_inset CommandInset href
+LatexCommand href
+name "AeroSkyTech"
+target "https://www.aeroskytech.com/english/firstnotions/anglesen.png"
+literal "false"
+
+\end_inset
+
+AeroSkyTech
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Pitch
+\begin_inset space ~
+\end_inset
+
+angle
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $(\theta)$
+\end_inset
+
+ The angle between the aircraft’s longitudinal axis
+\series bold
+ 
+\series default
+and the Earth 
+\series bold
+(inertial)
+\series default
+ horizontal plane, relation: 
+\begin_inset Formula $\theta=\alpha+\gamma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+AoA
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $(\alpha)$
+\end_inset
+
+Orientation The angle between the aircraft’s longitudinal axis and the relative
+ wind (freestream airflow direction).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Sideslip
+\begin_inset space ~
+\end_inset
+
+angle
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $(\beta)$
+\end_inset
+
+ The angle between the aircraft’s longitudinal axis and its relative wind
+ (freestream airflow direction) in the lateral plane, relation: 
+\begin_inset Formula $\beta=\tan^{-1}\left(\frac{v}{u}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Heading
+\begin_inset space ~
+\end_inset
+
+angle
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $(\psi)$
+\end_inset
+
+ The angle between the aircraft’s nose direction (longitudinal axis) and
+ true north.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="5">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="2.2cm">
+<column alignment="center" valignment="top" width="3.2cm">
+<column alignment="center" valignment="top" width="3.2cm">
+<column alignment="center" valignment="top" width="3.2cm">
+<column alignment="center" valignment="top" width="3.2cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Euler angles
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Direction Cosines
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quaternions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Axis-Angle
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Advantages
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- Only 3 variables.
+\end_layout
+
+\begin_layout Plain Layout
+- Directly relates to how pilots and engineers describe aircraft orientation.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- No singularities: Works for all orientations.
+\end_layout
+
+\begin_layout Plain Layout
+- Efficient when applying successive rotations.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- No singularities: Works for all orientations.
+\end_layout
+
+\begin_layout Plain Layout
+- Faster than DCM in 3D rotations.
+\end_layout
+
+\begin_layout Plain Layout
+- Only 4 values instead of 9 (as in DCM).
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- Requires only 4 values.
+\end_layout
+
+\begin_layout Plain Layout
+- Often used in computer graphics, robotics and even space shuttles.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Disadvantages
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- Singularity: A loss of one degree of freedom occurs at certain angles
+ (e.g., pitch ±90°).
+\end_layout
+
+\begin_layout Plain Layout
+- Converting between different frames requires multiple matrix operations.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- Contains 9 elements but only 3 are independent.
+\end_layout
+
+\begin_layout Plain Layout
+- More storage and calculations compared to other methods.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- Harder to visualize compared to Euler angles.
+\end_layout
+
+\begin_layout Plain Layout
+- Quaternions must be kept unit-length to avoid drift in calculations.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- Requires conversion to matrices or quaternions for application in transformati
+ons.
+\end_layout
+
+\begin_layout Plain Layout
+- Composing multiple rotations is not as straightforward.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Numerical solution of ODEs
+\end_layout
+
+\begin_layout Section
+Some ODEs numerical solving algorithms 
+\end_layout
+
+\begin_layout Subsection
+Euler Method
+\end_layout
+
+\begin_layout Standard
+A 
+\begin_inset Formula $1^{st}$
+\end_inset
+
+ order scheme is used to integrate the differential equations, using only
+ one approximation from Taylor's series.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{n+1}=y_{n}+h\cdot f(t_{n},\,y_{n})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Finite Difference Methods
+\end_layout
+
+\begin_layout Standard
+Approximates the derivatives in a set of differential equations using a
+ specific scheme, to transform the set of ODEs into a set of algebraic equations
+, that can be either in an explicit or implicit form.
+\end_layout
+
+\begin_layout Subsection
+Finite Volume Methods
+\end_layout
+
+\begin_layout Standard
+While similar to FDM but it approximates the equations over control volumes
+ rather than nodes, this ensures conservation of mass, momentum and energy,
+ this is the most common method in PDEs solution such as CFD because it's
+ too complicated to be used to solve ordinary differential equations.
+\end_layout
+
+\begin_layout Subsection
+Finite Element Methods
+\end_layout
+
+\begin_layout Standard
+You can either formulate the finite element method from Weighted Residuals
+ Method, or a Variational Method, this method is mostly used in structural
+ analyses where the system is governed also by PDEs, because the method
+ is also too complicated to be used to solve ordinary DEs.
+\end_layout
+
+\begin_layout Subsection
+Runge-Kutta Methods
+\end_layout
+
+\begin_layout Standard
+Uses simple schemes to obtain a very high accuracy for most dynamical systems,
+ even some (but not all) chaotic systems are usually modeled very well using
+ Runge-Kutta schemes, RK method can commonly use a 
+\begin_inset Formula $2^{nd}$
+\end_inset
+
+ or 
+\begin_inset Formula $4^{th}$
+\end_inset
+
+ order to solve the differential equations, the Runge-Kutta method is usually
+ used in professional mathematical solvers such as Matlab and Simulink.
+\end_layout
+
+\begin_layout Section
+Algorithm for solving airplane EOM
+\end_layout
+
+\begin_layout Standard
+A 
+\series bold
+fixed time step 
+\begin_inset Formula $4^{th}$
+\end_inset
+
+ order Runge-Kutta scheme
+\series default
+ is very sufficient to solve the airplane equations of motion.
+\end_layout
+
+\begin_layout Subsection
+Initial Conditions
+\end_layout
+
+\begin_layout Standard
+Typically we need 12 initial conditions for solving the 12 equations of
+ motion for the aircraft, which are: 
+\begin_inset Formula $\left[x,\,y,\,z,\,u,\,v,\,w,\,p,\,q,\,r,\,\phi,\,\theta,\,\psi\right]^{T}$
+\end_inset
+
+, noticing that (
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $y$
+\end_inset
+
+, 
+\begin_inset Formula $z$
+\end_inset
+
+) do not affect the dynamics of the airplane at all, and also noticing that
+ 
+\begin_inset Formula $\left(\phi,\,\theta,\,\psi\right)$
+\end_inset
+
+ are the Euler angles, and their initial values actually 
+\series bold
+do not matter
+\series default
+, what matters is their change during dynamics, so their initial conditions
+ may be taken as 
+\begin_inset Formula $\left(0,\,0,\,0\right)$
+\end_inset
+
+ or as maybe as some other reference directions, such as the true north
+ for 
+\begin_inset Formula $\psi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Inputs needed at each iteration 
+\begin_inset Formula $(n+1)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The inputs needed at each iteration are:
+\end_layout
+
+\begin_layout Enumerate
+The twelve states at the previous iteration 
+\begin_inset Formula $\left[x_{n},\,y_{n},\,z_{n},\,u_{n},\,v_{n},\,w_{n},\,p_{n},\,q_{n},\,r_{n},\,\phi_{n},\,\theta_{n},\,\psi_{n}\right]^{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Forces and Moments on the airplane.
+\end_layout
+
+\begin_layout Enumerate
+Moments of Inertia are needed but it is constant and does not change during
+ solution.
+\end_layout
+
+\begin_layout Subsection
+Outputs Calculated at each iteration 
+\begin_inset Formula $(n+1)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+First, the derivatives of the twelve states are calculated: 
+\begin_inset Formula $\left[\dot{x},\,\dot{y},\,\dot{z},\,\dot{u},\,\dot{v},\,\dot{w},\,\dot{p},\,\dot{q},\,\dot{r},\,\dot{\phi},\,\dot{\theta},\,\dot{\psi}\right]^{T}$
+\end_inset
+
+ from a mix of the 
+\begin_inset Formula $(n)$
+\end_inset
+
+, 
+\begin_inset Formula $(n+1/2)$
+\end_inset
+
+ and 
+\begin_inset Formula $(n+1)$
+\end_inset
+
+ time steps.
+ Which are then going to be used to relate the states from time stamp 
+\begin_inset Formula $n$
+\end_inset
+
+ to time stamp 
+\begin_inset Formula $n+1$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[x_{n+1},\,y_{n+1},\,z_{n+1},\,u_{n+1},\,v_{n+1},\,w_{n+1},\,p_{n+1},\,q_{n+1},\,r_{n+1},\,\phi_{n+1},\,\theta_{n+1},\,\psi_{n+1}\right]^{T}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Solution Algorithm
+\end_layout
+
+\begin_layout Standard
+If N is the total no.
+ of time steps:
+\end_layout
+
+\begin_layout LyX-Code
+for n in 1:N-1
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+h = t(n+1) - t(n);
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+K1 = h*f_dot(t(n), y(n));
+\end_layout
+
+\begin_layout LyX-Code
+K2 = h*f_dot(t(n)+h/2, y(n)+0.5*K1);
+\end_layout
+
+\begin_layout LyX-Code
+K3 = h*f_dot(t(n)+h/2, y(n)+0.5*K2);
+\end_layout
+
+\begin_layout LyX-Code
+K4 = h*f_dot(t(n)+h, y(n)+K3);
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+y(n+1) = y(n) + 1/6*(K1 + 2*K2 + 2*K3 + K4);
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Testing of the numerical solver on simple ODEs
+\end_layout
+
+\begin_layout Standard
+The algorithm RK4 was implemented and tested on a set of simple differential
+ equations:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\frac{dy_{1}}{dt} & = & \sin\left(t\right)+\cos\left(y_{1}\right)+\cos\left(y_{2}\right)\\
+\frac{dy_{2}}{dt} & = & \sin\left(t\right)+\sin\left(y_{2}\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with initial conditions:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{Bmatrix}y_{1}\left(t=0\right)\\
+y_{2}\left(t=0\right)
+\end{Bmatrix}=\begin{Bmatrix}2\\
+1
+\end{Bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Time span: 
+\begin_inset Formula $[0,\,20]$
+\end_inset
+
+, with 100 intervals in between for discretizing the equation.
+\end_layout
+
+\begin_layout Standard
+The two ODEs were solved using our RK4 algorithm, and it was validated using
+ Matlab's 
+\begin_inset Formula $\mathtt{ode45}$
+\end_inset
+
+ function, the results were very satisfactory:
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+Mean Squared Error in 1st state: 1.660598e-03, in 2nd state: 4.820051e-07
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/fig1_task1.png
+	width 45page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/fig2_task1.png
+	width 45page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparison between RK4 and ode45
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/fig3_task1.png
+	width 80page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparison between RK4 and ode45
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Nonlinear 6DOFs Airplane Simulator
+\end_layout
+
+\begin_layout Section
+Solving EOM using MATLAB & SIMULINK
+\end_layout
+
+\begin_layout Standard
+The code was based on the our 4th.
+ order fixed step Runge-Kutta method, it is now used to solve the 12 nonlinear,
+ coupled ordinary differential equations of motion of aircraft, which are
+ written in their vectorial (this is to use Matlab's power in manipulating
+ arrays) state space model as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{bmatrix}\begin{array}{c}
+\dot{u}\\
+\dot{v}\\
+\dot{w}
+\end{array}\end{bmatrix}=\frac{1}{m}\begin{bmatrix}\begin{array}{c}
+F_{x}\\
+F_{y}\\
+F_{z}
+\end{array}\end{bmatrix}-\begin{bmatrix}\begin{array}{c}
+p\\
+q\\
+r
+\end{array}\end{bmatrix}\times\begin{bmatrix}\begin{array}{c}
+u\\
+v\\
+w
+\end{array}\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{bmatrix}\begin{array}{c}
+\dot{p}\\
+\dot{q}\\
+\dot{r}
+\end{array}\end{bmatrix}=\left[I\right]^{-1}\left(\begin{bmatrix}\begin{array}{c}
+L\\
+M\\
+N
+\end{array}\end{bmatrix}-\begin{bmatrix}\begin{array}{c}
+p\\
+q\\
+r
+\end{array}\end{bmatrix}\times\left[I\right]\begin{bmatrix}\begin{array}{c}
+p\\
+q\\
+r
+\end{array}\end{bmatrix}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{bmatrix}\begin{array}{c}
+\dot{\phi}\\
+\dot{\theta}\\
+\dot{\psi}
+\end{array}\end{bmatrix}=\begin{bmatrix}1 & S\phi T\theta & C\phi T\theta\\
+0 & C\phi & -S\phi\\
+0 & \frac{S\phi}{C\theta} & \frac{C\phi}{C\theta}
+\end{bmatrix}\begin{bmatrix}\begin{array}{c}
+p\\
+q\\
+r
+\end{array}\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{bmatrix}\begin{array}{c}
+\dot{x}_{e}\\
+\dot{y}_{e}\\
+\dot{z}_{e}
+\end{array}\end{bmatrix}=\left[R\left(\psi\right)R\left(\theta\right)R\left(\phi\right)\right]\begin{bmatrix}\begin{array}{c}
+u\\
+v\\
+w
+\end{array}\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As apparent from the equations, we used a 
+\begin_inset Quotes eld
+\end_inset
+
+ZYX
+\begin_inset Quotes erd
+\end_inset
+
+ sequence for Euler angles, which is a very typical convention in aerospace
+ applications.
+\end_layout
+
+\begin_layout Standard
+A, similar technique was used in SIMULINK software, the settings of the
+ simulation on Simulink needed to be changed a little, in order to produce
+ results at the same time intervals as same as the matlab code, so we set
+ the simulation to be a 
+\begin_inset Formula $4^{th}$
+\end_inset
+
+ order Runge-Kutta with fixed step size 
+\begin_inset Formula $dt$
+\end_inset
+
+ (defined in matlab workspace, as well as final time 
+\begin_inset Formula $t_{f}$
+\end_inset
+
+), the resulting time array indeed was same as our time array defined in
+ matlab, but only differed in a few timestamps due to truncation error.
+\end_layout
+
+\begin_layout Standard
+We used the block 
+\series bold
+6DOF Euler Angles
+\series default
+ to solve the exact same equations as written in the previous section, we
+ only need to read the initial conditions, and simulation data from matlab
+ workspace.
+\end_layout
+
+\begin_layout Section
+Comparing Results
+\end_layout
+
+\begin_layout Standard
+There are so many formulae to compare the error/difference between two signals,
+ or more generally, two arrays, among them are:
+\end_layout
+
+\begin_layout Enumerate
+Mean Squared Error:
+\begin_inset Newline newline
+\end_inset
+
+This is the most common and easiest way to compare two arrays, it can be
+ calculated using the formula: 
+\begin_inset Formula $\textbf{MSE}=\frac{1}{N}\sum\left(y_{1}-y_{2}\right)^{2}$
+\end_inset
+
+, a modification to it is the Root MSE, given by equation: 
+\begin_inset Formula $\textbf{RMSE}=\sqrt{\frac{1}{N}\sum\left(y_{1}-y_{2}\right)^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Mean Absolute Error:
+\begin_inset Newline newline
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\textbf{MAE}=\frac{1}{N}\sum|y_{1}-y_{2}|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Huber Loss:
+\begin_inset Newline newline
+\end_inset
+
+It is used a lot in machine learning and neural networks to calculate cost
+ functions, 
+\begin_inset Formula $L_{\delta}\left(y_{1},y_{2}\right)=\begin{cases}
+\frac{1}{2}\left(y_{1}-y_{2}\right)^{2} & \text{if }|y_{1}-y_{2}|\leq\delta\\
+\delta|y_{1}-y_{2}|-\frac{1}{2}\delta^{2} & \text{otherwise}
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Minkowski Distance:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $D_{p}\left(y_{1,}y_{2}\right)=\left(\sum|y_{1}-y_{2}|^{p}\right)^{\frac{1}{p}}$
+\end_inset
+
+, when 
+\begin_inset Formula $p=1$
+\end_inset
+
+ it becomes the Manhattan distance, when 
+\begin_inset Formula $p=2$
+\end_inset
+
+ it becomes the Euclidean distance, other values of 
+\begin_inset Formula $p$
+\end_inset
+
+ make it more general and abstract.
+\end_layout
+
+\begin_layout Enumerate
+Chebyshev Distance:
+\begin_inset Newline newline
+\end_inset
+
+The Chebyshev distance is the maximum absolute difference between the correspond
+ing elements of the two vectors.
+ It is defined as: 
+\begin_inset Formula $D_{p}\left(y_{1,}y_{2}\right)=\max|y_{1}-y_{2}|$
+\end_inset
+
+.
+ This metric is useful when the largest difference between any pair of correspon
+ding elements is the most important factor.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wikipedia_chebyshev"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Correlation Coefficient:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $r=\frac{\sum\left(X_{i}-\bar{X}\right)\left(Y_{i}-\bar{Y}\right)}{\sqrt{\sum\left(X_{i}-\bar{X}\right)^{2}}\cdot\sqrt{\sum\left(Y_{i}-\bar{Y}\right)^{2}}}$
+\end_inset
+
+, where 
+\begin_inset Formula $\bar{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\bar{y}$
+\end_inset
+
+ are the means of the vectors.
+ This measures the linear relationship between the two vectors.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wikipedia_correl_coeff"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+In this example we certainly used 
+\begin_inset Formula $MSE$
+\end_inset
+
+ to compare the results from matlab and Simulink, and it has shown a very
+ great accuracy since the value 
+\begin_inset Formula $MSE=6.933581\text{e}-21$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/fig1.png
+	width 85page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Solution of the states: 
+\begin_inset Formula $\left[u,v,w,p,q,r\right]$
+\end_inset
+
+ by both matlab and Simulink
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/fig2.png
+	width 85page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Solution of the states: 
+\begin_inset Formula $\left[\phi,\theta,\psi,x_{e},y_{e},z_{e}\right]$
+\end_inset
+
+ by both matlab and Simulink
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Airframe Model
+\end_layout
+
+\begin_layout Standard
+The airframe model was implemented in both matlab and Simulink, in order
+ to model the forces and moments acting on the airplane, we used a first
+ order Taylor series expansion, in which we can write the forces as a linear
+ combination of the corresponding states as well as control actions, the
+ coefficients in this linear combination are the stability and control derivativ
+es.
+\end_layout
+
+\begin_layout Standard
+Those derivatives can be obtained in multiple ways, among them are: aerodynamics
+ analysis software, CFD or wind tunnels, in our case we are working on an
+ airplane that exists in the NACA 2144 Report, so the stability derivatives
+ are quite ready to be used, only after keeping an eye for units and the
+ dimensionalization process...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\Delta X & = & X_{u}u+X_{w}w+X_{\delta_{e}}\delta_{e}+X_{\delta_{th}}\delta_{th}\\
+\Delta Y & = & Y_{v}v+Y_{p}p+Y_{r}r+Y_{\delta_{a}}\delta_{a}+Y_{\delta_{r}}\delta_{r}\\
+\Delta Z & = & Z_{u}u+Z_{w}w+Z_{\dot{w}}\dot{w}+Z_{q}q+Z_{\delta_{e}}\delta_{e}+Z_{\delta_{th}}\delta_{th}\\
+\Delta L & = & L_{v}v+L_{p}p+L_{r}r+L_{\delta_{a}}\delta_{a}+L_{\delta_{r}}\delta_{r}\\
+\Delta M & = & M_{u}u+M_{w}w+M_{\dot{w}}\dot{w}+M_{q}q+M_{\delta_{e}}\delta_{e}+M_{\delta_{th}}\delta_{th}\\
+\Delta N & = & N_{v}v+N_{p}p+N_{r}r+N_{\delta_{a}}\delta_{a}+N_{\delta_{r}}\delta_{r}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Validating our nonlinear 6DOF Simulator on Boeing 747 Flight Condition 5
+\end_layout
+
+\begin_layout Standard
+After coding the nonlinear simulator in both MATLAB and SIMULINK, at first
+ a problem appeared in the response of many of the states at which fast
+ oscillations appear (the problem affected some states of both the longitudinal
+ and lateral related states), such as the response in the next figure, we
+ found out that this is due to the fact that we forgot to multiply the value
+ of 
+\begin_inset Formula $\dot{w}$
+\end_inset
+
+ by 
+\begin_inset Formula $dt$
+\end_inset
+
+ inside the Runge-Kutta integrator, this lead to an increased damping-like
+ behaviour.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/wrong_response_3.png
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wrong response due to wrong calculation of 
+\begin_inset Formula $\dot{w}$
+\end_inset
+
+ in the MATLAB code, the SIMULINK response here is correct
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Those are the results for Boeing flight condition 5, in order to compare
+ with the results in the benchmark test, and also in order to compare the
+ matlab code the Simulink one, in order to make sure they produce the same
+ results.
+\end_layout
+
+\begin_layout Subsection
+No Input
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/no_input1.svg
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/no_input2.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/no_input3.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/no_input4.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/no_input5.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Response of the airplane Boeing 747 FC 5 to no control inputs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $dA=+5^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/pos_5deg_daileron1.svg
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/pos_5deg_daileron2.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/pos_5deg_daileron3.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/pos_5deg_daileron4.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/pos_5deg_daileron5.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Response of the airplane Boeing 747 FC 5 to 
+\begin_inset Formula $+5^{\circ}$
+\end_inset
+
+ aileron
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $dA=-5^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/neg_5deg_daileron1.svg
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/neg_5deg_daileron2.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/neg_5deg_daileron3.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/neg_5deg_daileron4.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/neg_5deg_daileron5.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Response of the airplane Boeing 747 FC 5 to 
+\begin_inset Formula $-5^{\circ}$
+\end_inset
+
+ aileron
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $dE=+5^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/pos_5deg_delevator1.svg
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/pos_5deg_delevator2.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/pos_5deg_delevator3.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/pos_5deg_delevator4.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/pos_5deg_delevator5.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Response of the airplane Boeing 747 FC 5 to 
+\begin_inset Formula $+5^{\circ}$
+\end_inset
+
+ elevator
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $dE=-5^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/neg_5deg_delevator1.svg
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/neg_5deg_delevator2.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/neg_5deg_delevator3.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/neg_5deg_delevator4.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/neg_5deg_delevator5.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Response of the airplane Boeing 747 FC 5 to 
+\begin_inset Formula $-5^{\circ}$
+\end_inset
+
+ elevator
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $dTH=1000$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/1000_dthrottle1.svg
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/1000_dthrottle2.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/1000_dthrottle3.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/1000_dthrottle4.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/1000_dthrottle5.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Response of the airplane Boeing 747 FC 5 to 
+\begin_inset Formula $1000$
+\end_inset
+
+ throttle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $dTH=10000$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/10000_dthrottle1.svg
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/10000_dthrottle2.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/10000_dthrottle3.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/10000_dthrottle4.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/10000_dthrottle5.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Response of the airplane Boeing 747 FC 5 to 
+\begin_inset Formula $10000$
+\end_inset
+
+ throttle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $dR=+5^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/pos_5deg_drudder1.svg
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/pos_5deg_drudder2.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/pos_5deg_drudder3.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/pos_5deg_drudder4.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/pos_5deg_drudder5.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Response of the airplane Boeing 747 FC 5 to 
+\begin_inset Formula $+5^{\circ}$
+\end_inset
+
+ rudder
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $dR=-5^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/neg_5deg_drudder1.svg
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/neg_5deg_drudder2.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/neg_5deg_drudder3.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/neg_5deg_drudder4.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/neg_5deg_drudder5.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Response of the airplane Boeing 747 FC 5 to 
+\begin_inset Formula $-5^{\circ}$
+\end_inset
+
+ rudder
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Dynamics of Lockheed Jetstar FC 9
+\end_layout
+
+\begin_layout Subsection
+No Input
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_no_input1.svg
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_no_input2.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_no_input3.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_no_input4.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_no_input5.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Response of the airplane Boeing 747 FC 5 to no control inputs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $dA=+5^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_pos_5deg_daileron1.svg
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_pos_5deg_daileron2.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_pos_5deg_daileron3.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_pos_5deg_daileron4.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_pos_5deg_daileron5.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Response of the airplane Boeing 747 FC 5 to 
+\begin_inset Formula $+5^{\circ}$
+\end_inset
+
+ aileron
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $dA=-5^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_neg_5deg_daileron1.svg
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_neg_5deg_daileron2.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_neg_5deg_daileron3.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_neg_5deg_daileron4.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_neg_5deg_daileron5.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Response of the airplane Boeing 747 FC 5 to 
+\begin_inset Formula $-5^{\circ}$
+\end_inset
+
+ aileron
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $dE=+5^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_pos_5deg_delevator1.svg
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_pos_5deg_delevator2.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_pos_5deg_delevator3.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_pos_5deg_delevator4.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_pos_5deg_delevator5.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Response of the airplane Boeing 747 FC 5 to 
+\begin_inset Formula $+5^{\circ}$
+\end_inset
+
+ elevator
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $dE=-5^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_neg_5deg_delevator1.svg
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_neg_5deg_delevator2.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_neg_5deg_delevator3.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_neg_5deg_delevator4.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_neg_5deg_delevator5.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Response of the airplane Boeing 747 FC 5 to 
+\begin_inset Formula $-5^{\circ}$
+\end_inset
+
+ elevator
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $dTH=1000$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_1000_dthrottle1.svg
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_1000_dthrottle2.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_1000_dthrottle3.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_1000_dthrottle4.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_1000_dthrottle5.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Response of the airplane Boeing 747 FC 5 to 
+\begin_inset Formula $1000$
+\end_inset
+
+ throttle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $dTH=10000$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_10000_dthrottle1.svg
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_10000_dthrottle2.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_10000_dthrottle3.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_10000_dthrottle4.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_10000_dthrottle5.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Response of the airplane Boeing 747 FC 5 to 
+\begin_inset Formula $10000$
+\end_inset
+
+ throttle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $dR=+5^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_pos_5deg_drudder1.svg
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_pos_5deg_drudder2.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_pos_5deg_drudder3.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_pos_5deg_drudder4.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_pos_5deg_drudder5.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Response of the airplane Boeing 747 FC 5 to 
+\begin_inset Formula $+5^{\circ}$
+\end_inset
+
+ rudder
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $dR=-5^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_neg_5deg_drudder1.svg
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_neg_5deg_drudder2.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_neg_5deg_drudder3.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_neg_5deg_drudder4.svg
+	width 35page%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Jetstar_neg_5deg_drudder5.svg
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Response of the airplane Boeing 747 FC 5 to 
+\begin_inset Formula $-5^{\circ}$
+\end_inset
+
+ rudder
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Extracting the Stability Derivatives of our airplane: Lockheed Jetstar;
+ Flight Condition 9
+\end_layout
+
+\begin_layout Standard
+We took the flight conditions as well as stability & control derivatives
+ from the NACA report 2144, and we checked them using the 
+\family typewriter
+Excel_Validation_App.p
+\family default
+ ...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/excel_validation_1.png
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/excel_validation_2.png
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Excel Validation App
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset External
+	template PDFPages
+	filename Our Derivatives.pdf
+	extra LaTeX "pages=-"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Linearization of EOM & Mode Approximations
+\end_layout
+
+\begin_layout Standard
+We started off with the nonlinear 6DOFs Rigid Body Dynamics Equations of
+ motion of aircraft, given in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Nonlinear 6DOF RBD Equations"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ For stability and control analysis purposes, we now start linearizing the
+ equations using the Small Disturbance Theory, it is assumed that the motion
+ of the airplane consists of small deviations from a reference condition
+ of steady flight, we do this by introducing a perturbation term plus the
+ reference value for each variable in the equations 
+\begin_inset Formula $var=var_{0}+\Delta var$
+\end_inset
+
+, we make some assumptions:
+\end_layout
+
+\begin_layout Enumerate
+Only linear terms are not neglected in the equations
+\end_layout
+
+\begin_layout Enumerate
+Effects of spinning rotors are negligible
+\end_layout
+
+\begin_layout Enumerate
+Wind velocity is zero 
+\begin_inset Formula $V^{E}=V$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Consider 
+\begin_inset Formula $u_{0}\neq0$
+\end_inset
+
+, 
+\begin_inset Formula $\theta_{0}\neq0$
+\end_inset
+
+, otherwise 
+\begin_inset Formula $\text{var}_{0}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Consider 
+\begin_inset Formula $\dot{\text{var}}_{0}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\cos\left(\Delta\text{angle}\right)=1$
+\end_inset
+
+, also 
+\begin_inset Formula $\sin\left(\Delta\text{angle}\right)=\Delta\text{angle}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Using first order approximation from taylor expansion: 
+\begin_inset Formula $\tan\left(\text{angle}_{0}+\Delta\text{angle}\right)\approx\tan\left(\text{angle}_{0}\right)+\Delta\text{angle}\,\sec^{2}\left(\text{angle}_{0}\right)$
+\end_inset
+
+, also 
+\begin_inset Formula $\sec\left(\text{angle}_{0}+\Delta\text{angle}\right)=\sec\left(\text{angle}_{0}\right)+\Delta\text{angle}\,\sec\left(\text{angle}_{0}\right)\tan\left(\text{angle}_{0}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Equations become:
+\end_layout
+
+\begin_layout Standard
+
+\size small
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+X_{0}+\Delta X-mg\sin\left(\theta_{0}+\Delta\theta\right) & = & m\left(\cancelto{0}{\dot{u}_{0}}+\Delta\dot{u}+\left(\cancelto{0}{q_{0}}+\Delta q\right)\left(w_{0}+\Delta w\right)-\left(\cancelto{0}{r_{0}}+\Delta r\right)\left(\cancelto{0}{v_{0}}+\Delta v\right)\right)\\
+Y_{0}+\Delta Y+mg\cos\left(\theta_{0}+\Delta\theta\right)\sin\left(\phi_{0}+\Delta\phi\right) & = & m\left(\cancelto{0}{\dot{v}_{0}}+\Delta\dot{v}+\left(\cancelto{0}{r_{0}}+\Delta r\right)\left(u_{0}+\Delta u\right)-\left(\cancelto{0}{p_{0}}+\Delta p\right)\left(w_{0}+\Delta w\right)\right)\\
+Z_{0}+\Delta Z+mg\cos\left(\theta_{0}+\Delta\theta\right)\cos\left(\phi_{0}+\Delta\phi\right) & = & m\left(\cancelto{0}{\dot{w}_{0}}+\Delta\dot{w}+\left(\cancelto{0}{p_{0}}+\Delta p\right)\left(\cancelto{0}{v_{0}}+\Delta v\right)-\left(\cancelto{0}{q_{0}}+\Delta q\right)\left(u_{0}+\Delta u\right)\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+L_{0}+\Delta L & = & I_{x}\left(\cancelto{0}{\dot{p}_{0}}+\Delta\dot{p}\right)-I_{zx}\left(\cancelto{0}{\dot{r}_{0}}+\Delta\dot{r}\right)+0\\
+M_{0}+\Delta M & = & I_{y}\Delta\dot{q}+0\\
+N_{0}+\Delta N & = & I_{z}\Delta\dot{r}-I_{zx}\Delta\dot{p}+0
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\dot{\phi}_{0}+\Delta\dot{\phi} & = & p_{0}+\Delta p+\left(\left(q_{0}+\Delta q\right)\sin\left(\phi_{0}+\Delta\phi\right)+\left(r_{0}+\Delta r\right)\cos\left(\phi_{0}+\Delta\phi\right)\right)\tan\left(\theta_{0}+\Delta\theta\right)\\
+\dot{\theta}_{0}+\Delta\dot{\theta} & = & \left(q_{0}+\Delta q\right)\cos\left(\phi_{0}+\Delta\phi\right)-\left(r_{0}+\Delta r\right)\sin\left(\phi_{0}+\Delta\phi\right)\\
+\dot{\psi}_{0}+\Delta\dot{\psi} & = & \left(\left(q_{0}+\Delta q\right)\sin\left(\phi_{0}+\Delta\phi\right)+\left(r_{0}+\Delta r\right)\cos\left(\phi_{0}+\Delta\phi\right)\right)\sec\left(\theta_{0}+\Delta\theta\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\dot{x}_{E_{0}}+\Delta\dot{x}_{E} & = & \left(u_{0}+\Delta u\right)\cos\left(\theta_{0}+\Delta\theta\right)\cos\left(\Delta\psi\right)+0+\Delta w\sin\left(\theta_{0}+\Delta\theta\right)\\
+\dot{y}_{E_{0}}+\Delta\dot{y}_{E} & = & u_{0}\cos\left(\theta_{0}+\Delta\theta\right)\sin\left(\Delta\psi\right)+\Delta v*1+0\\
+\dot{z}_{E_{0}}+\Delta\dot{z}_{E} & = & -\left(u_{0}+\Delta u\right)\sin\left(\theta_{0}+\Delta\theta\right)+0+\Delta w\cos\left(\phi_{0}+\Delta\phi\right)\cos\left(\theta_{0}+\Delta\theta\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Simplifying:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+X_{0}+\Delta X-mg\left(\sin\left(\theta_{0}\right)\cos\left(\Delta\theta\right)+\sin\left(\Delta\theta\right)\cos\left(\theta_{0}\right)\right) & = & m\left(\Delta\dot{u}+w_{0}\Delta q\right)\\
+Y_{0}+\Delta Y+mg\left(\cos\left(\theta_{0}\right)\cos\left(\Delta\theta\right)-\sin\left(\theta_{0}\right)\sin\left(\Delta\theta\right)\right)\sin\left(\Delta\phi\right) & = & m\left(\Delta\dot{v}+u_{0}\Delta r-w_{0}\Delta p\right)\\
+Z_{0}+\Delta Z+mg\left(\cos\left(\theta_{0}\right)\cos\left(\Delta\theta\right)-\sin\left(\theta_{0}\right)\sin\left(\Delta\theta\right)\right)\cos\left(\Delta\phi\right) & = & m\left(\Delta\dot{w}-u_{0}\Delta q\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+L_{0}+\Delta L & = & I_{x}\Delta\dot{p}-I_{zx}\Delta\dot{r}\\
+M_{0}+\Delta M & = & I_{y}\Delta\dot{q}\\
+N_{0}+\Delta N & = & I_{z}\Delta\dot{r}-I_{zx}\Delta\dot{p}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\Delta\dot{\phi} & = & \Delta p+\left(\Delta q\sin\left(\Delta\phi\right)+\Delta r\cos\left(\Delta\phi\right)\right)\left(\tan\left(\theta_{0}\right)+\Delta\theta\sec^{2}\left(\theta_{0}\right)\right)\\
+\Delta\dot{\theta} & = & \Delta q\cos\left(\Delta\phi\right)-\Delta r\sin\left(\Delta\phi\right)\\
+\Delta\dot{\psi} & = & \left(\Delta q\sin\left(\Delta\phi\right)+\Delta r\cos\left(\Delta\phi\right)\right)\left(\sec\left(\theta_{0}\right)+\Delta\theta\sec\left(\theta_{0}\right)\tan\left(\theta_{0}\right)\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size small
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\dot{x}_{E_{0}}+\Delta\dot{x}_{E} & = & \left(u_{0}+\Delta u\right)\left(\cos\left(\theta_{0}\right)\cos\left(\Delta\theta\right)-\sin\left(\theta_{0}\right)\sin\left(\Delta\theta\right)\right)\cos\left(\Delta\psi\right)+\Delta w\left(\sin\left(\theta_{0}\right)\cos\left(\Delta\theta\right)+\sin\left(\Delta\theta\right)\cos\left(\theta_{0}\right)\right)\\
+\dot{y}_{E_{0}}+\Delta\dot{y}_{E} & = & u_{0}\left(\cos\left(\theta_{0}\right)\cos\left(\Delta\theta\right)-\sin\left(\theta_{0}\right)\sin\left(\Delta\theta\right)\right)\sin\left(\Delta\psi\right)+\Delta v\\
+\dot{z}_{E_{0}}+\Delta\dot{z}_{E} & = & -\left(u_{0}+\Delta u\right)\left(\sin\left(\theta_{0}\right)\cos\left(\Delta\theta\right)+\sin\left(\Delta\theta\right)\cos\left(\theta_{0}\right)\right)+\Delta w\left(\cos\left(\theta_{0}\right)\cos\left(\Delta\theta\right)-\sin\left(\theta_{0}\right)\sin\left(\Delta\theta\right)\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Further simplification:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+X_{0}+\Delta X-mg\left(\sin\left(\theta_{0}\right)+\Delta\theta\cos\left(\theta_{0}\right)\right) & = & m\left(\Delta\dot{u}+w_{0}\Delta q\right)\\
+Y_{0}+\Delta Y+mg\cos\left(\theta_{0}\right)\Delta\phi & = & m\left(\Delta\dot{v}+u_{0}\Delta r-w_{0}\Delta p\right)\\
+Z_{0}+\Delta Z+mg\left(\cos\left(\theta_{0}\right)-\sin\left(\theta_{0}\right)\Delta\theta\right) & = & m\left(\Delta\dot{w}-u_{0}\Delta q\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+L_{0}+\Delta L & = & I_{x}\Delta\dot{p}-I_{zx}\Delta\dot{r}\\
+M_{0}+\Delta M & = & I_{y}\Delta\dot{q}\\
+N_{0}+\Delta N & = & I_{z}\Delta\dot{r}-I_{zx}\Delta\dot{p}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\Delta\dot{\phi} & = & \Delta p+\Delta r\tan\left(\theta_{0}\right)\\
+\Delta\dot{\theta} & = & \Delta q\\
+\Delta\dot{\psi} & = & \Delta r\sec\left(\theta_{0}\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\dot{x}_{E_{0}}+\Delta\dot{x}_{E} & = & \left(u_{0}+\Delta u\right)\left(\cos\left(\theta_{0}\right)\right)-u_{0}\sin\left(\theta_{0}\right)\Delta\theta+\Delta w\sin\left(\theta_{0}\right)\\
+\dot{y}_{E_{0}}+\Delta\dot{y}_{E} & = & u_{0}\cos\left(\theta_{0}\right)\Delta\psi+\Delta v\\
+\dot{z}_{E_{0}}+\Delta\dot{z}_{E} & = & -\left(u_{0}+\Delta u\right)\left(\sin\left(\theta_{0}\right)\right)-u_{0}\Delta\theta\cos\left(\theta_{0}\right)+\Delta w\cos\left(\theta_{0}\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using the reference steady state forces, we can eliminate the reference
+ forces at equilibrium condition:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X_{0}-mg\sin\theta_{0}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Y_{0}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Z_{0}+mg\cos\theta_{0}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L_{0}=M_{0}=N_{0}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\dot{x}_{E_{0}}=u_{0}\cos\theta_{0},\,\,\dot{y}_{E_{0}}=0,\,\,\dot{z}_{E_{0}}=-u_{0}\sin\theta_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Substitute into the above equations and drop the 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ notation off the states:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\Delta X-mg\cos\theta_{0}\,\,\theta & = & m\left(\dot{u}+w_{0}\Delta q\right)\\
+\Delta Y+mg\cos\theta_{0}\,\,\phi & = & m\left(\dot{v}+u_{0}r-w_{0}\Delta p\right)\\
+\Delta Z-mg\sin\theta_{0}\,\,\theta & = & m\left(\dot{w}-u_{0}q\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\Delta L & = & I_{x}\dot{p}-I_{zx}\dot{r}\\
+\Delta M & = & I_{y}\dot{q}\\
+\Delta N & = & I_{z}\dot{r}-I_{zx}\dot{p}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\dot{\phi} & = & p+r\tan\theta_{0}\\
+\dot{\theta} & = & q\\
+\dot{\psi} & = & r\sec\theta_{0}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\dot{x}_{E} & = & u\cos\theta_{0}-u_{0}\sin\theta_{0}\,\,\theta+w\sin\theta_{0}\\
+\dot{y}_{E} & = & u_{0}\cos\theta_{0}\,\,\psi+v\\
+\dot{z}_{E} & = & -u\sin\theta_{0}-u_{0}\cos\theta_{0}\,\,\theta+w\cos\theta_{0}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using the first order taylor series approximation for forces (used before
+ in the airframe model):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\Delta X & = & X_{u}u+X_{w}w+X_{\delta_{e}}\delta_{e}+X_{\delta_{th}}\delta_{th}\\
+\Delta Y & = & Y_{v}v+Y_{p}p+Y_{r}r+Y_{\delta_{a}}\delta_{a}+Y_{\delta_{r}}\delta_{r}\\
+\Delta Z & = & Z_{u}u+Z_{w}w+Z_{\dot{w}}\dot{w}+Z_{q}q+Z_{\delta_{e}}\delta_{e}+Z_{\delta_{th}}\delta_{th}\\
+\Delta L & = & L_{v}v+L_{p}p+L_{r}r+L_{\delta_{a}}\delta_{a}+L_{\delta_{r}}\delta_{r}\\
+\Delta M & = & M_{u}u+M_{w}w+M_{\dot{w}}\dot{w}+M_{q}q+M_{\delta_{e}}\delta_{e}+M_{\delta_{th}}\delta_{th}\\
+\Delta N & = & N_{v}v+N_{p}p+N_{r}r+N_{\delta_{a}}\delta_{a}+N_{\delta_{r}}\delta_{r}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Substitute into the above equations, and rearranging, we get some equations
+ decoupled from the others, the first set of equations are called longitudinal
+ dynamics equations (dynamics in the plane of symmetry of the airplane),
+ and the second set is the lateral dynamics equations (dynamics out of the
+ plane of symmetry).
+\end_layout
+
+\begin_layout Standard
+The equations in terms of the derivatives of the states are:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\dot{u} & = & \frac{\Delta X}{m}-w_{0}q-g\cos\theta_{0}\,\,\theta\\
+\dot{v} & = & \frac{\Delta Y}{m}-g\cos\theta_{0}\,\,\phi+w_{0}p-u_{0}r\\
+\dot{w} & = & \frac{\Delta Z}{m}-g\sin\theta_{0}\,\,\theta+u_{0}q
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+solving for 
+\begin_inset Formula $\dot{p}$
+\end_inset
+
+ and 
+\begin_inset Formula $\dot{r}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\dot{r}=\frac{1}{I_{zx}}\left(I_{x}\dot{p}-\Delta L\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+therefore:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta N=\frac{I_{z}}{I_{zx}}\left(I_{x}\dot{p}-\Delta L\right)-I_{zx}\dot{p}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+hence:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\dot{p}=\frac{I_{zx}}{I_{z}I_{x}-I_{zx}^{2}}\Delta N+\frac{I_{z}}{I_{z}I_{x}-I_{zx}^{2}}\Delta L
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\dot{r}=\frac{I_{x}}{I_{z}I_{x}-I_{zx}^{2}}\Delta N+\frac{I_{zx}}{I_{z}I_{x}-I_{zx}^{2}}\Delta L
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\dot{p} & = & \frac{I_{z}}{I_{z}I_{x}-I_{zx}^{2}}\Delta L+\frac{I_{zx}}{I_{z}I_{x}-I_{zx}^{2}}\Delta N\\
+\dot{q} & = & \frac{\Delta M}{I_{y}}\\
+\dot{r} & = & \frac{I_{zx}}{I_{z}I_{x}-I_{zx}^{2}}\Delta L+\frac{I_{x}}{I_{z}I_{x}-I_{zx}^{2}}\Delta N
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and the Euler angles equations as well as the inertial velocity equations
+ are same as they are.
+\end_layout
+
+\begin_layout Section
+Linearized Longitudinal Dynamics
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccc}
+\frac{d}{dt}\begin{bmatrix}u\\
+w\\
+q\\
+\theta
+\end{bmatrix} & = & \begin{bmatrix}\frac{X_{u}}{m} & \frac{X_{w}}{m} & -w_{0} & -g\cos\theta_{0}\\
+\frac{Z_{u}}{m-Z_{\dot{w}}} & \frac{Z_{w}}{m-Z_{\dot{w}}} & \frac{Z_{q}+mu_{0}}{m-Z_{\dot{w}}} & \frac{-mg\sin\theta_{0}}{m-Z_{\dot{w}}}\\
+\frac{1}{I_{y}}\left(M_{u}+M_{\dot{w}}\frac{Z_{u}}{m-Z_{\dot{w}}}\right) & \frac{1}{I_{y}}\left(M_{w}+M_{\dot{w}}\frac{Z_{w}}{m-Z_{\dot{w}}}\right) & \frac{1}{I_{y}}\left(M_{q}+M_{\dot{w}}\frac{Z_{q}+mu_{0}}{m-Z_{\dot{w}}}\right) & -\frac{M_{\dot{w}}}{I_{y}}\frac{mg\sin\theta_{0}}{m-Z_{\dot{w}}}\\
+0 & 0 & 1 & 0
+\end{bmatrix}\begin{bmatrix}u\\
+w\\
+q\\
+\theta
+\end{bmatrix}\\
+ &  & +\begin{bmatrix}\frac{X_{\delta_{e}}}{m} & \frac{X_{\delta_{th}}}{m}\\
+\frac{Z_{\delta_{e}}}{m-Z_{\dot{w}}} & \frac{Z_{\delta_{e}}}{m-Z_{\dot{w}}}\\
+\frac{1}{I_{y}}\left(M_{\delta_{e}}+M_{\dot{w}}\frac{Z_{\delta_{e}}}{m-Z_{\dot{w}}}\right) & \frac{1}{I_{y}}\left(M_{\delta_{th}}+M_{\dot{w}}\frac{Z_{\delta_{th}}}{m-Z_{\dot{w}}}\right)\\
+0 & 0
+\end{bmatrix}\begin{bmatrix}\delta_{e}\\
+\delta_{th}
+\end{bmatrix}
+\end{array}\label{eq:linearized_longitudinal_dynamics}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with inertial velocity equations:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\dot{x}_{E} & = & u\cos\theta_{0}+w\sin\theta_{0}-u_{0}\sin\theta_{0}\,\,\theta\\
+\dot{z}_{E} & = & -u\sin\theta_{0}+w\cos\theta_{0}-u_{0}\cos\theta_{0}\,\,\theta
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For our specific airplane (Jetstar):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\frac{d}{dt}\begin{bmatrix}u\\
+w\\
+q\\
+\theta
+\end{bmatrix} & = & \begin{bmatrix}-0.0017 & 0.0498 & -76.6558 & -31.9342\\
+-0.0408 & -0.4750 & 624.3115 & -3.9210\\
+7.5667e-04 & -0.0055 & -0.5280 & 9.2928e-04\\
+0 & 0 & 1 & 0
+\end{bmatrix}\begin{bmatrix}u\\
+w\\
+q\\
+\theta
+\end{bmatrix}\\
+ &  & +\begin{bmatrix}2.6600 & 8.4200e-04\\
+-21.7000 & 0\\
+-4.2649 & -6.0400e-06\\
+0 & 0
+\end{bmatrix}\begin{bmatrix}\delta_{e}\\
+\delta_{th}
+\end{bmatrix}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Linearized Lateral Dynamics
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccc}
+\frac{d}{dt}\begin{bmatrix}v\\
+p\\
+r\\
+\phi
+\end{bmatrix} & = & \begin{bmatrix}\frac{Y_{v}}{m} & \frac{Y_{p}}{m}+w_{0} & \frac{Y_{r}}{m}-u_{0} & g\cos\theta_{0}\\
+\frac{L_{v}}{I_{x}'}+I_{zx}'N_{v} & \frac{L_{p}}{I_{x}'}+I_{zx}'N_{p} & \frac{L_{r}}{I_{x}'}+I_{zx}'N_{r} & 0\\
+I_{zx}'L_{v}+\frac{N_{v}}{I_{z}'} & I_{zx}'L_{p}+\frac{N_{p}}{I_{z}'} & I_{zx}'L_{r}+\frac{N_{r}}{I_{z}'} & 0\\
+0 & 1 & \tan\theta_{0} & 0
+\end{bmatrix}\begin{bmatrix}v\\
+p\\
+r\\
+\phi
+\end{bmatrix}\\
+ &  & +\begin{bmatrix}\frac{Y_{\delta_{a}}}{m} & \frac{Y_{\delta_{r}}}{m}\\
+\frac{L_{\delta_{a}}}{I_{x}'}+I_{zx}'N_{\delta_{a}} & \frac{L_{\delta_{r}}}{I_{x}'}+I_{zx}'N_{\delta_{r}}\\
+I_{zx}'L_{\delta_{a}}+\frac{N_{\delta_{a}}}{I_{z}'} & I_{zx}'L_{\delta_{r}}+\frac{N_{\delta_{r}}}{I_{z}'}\\
+0 & 0
+\end{bmatrix}\begin{bmatrix}\delta_{a}\\
+\delta_{r}
+\end{bmatrix}
+\end{array}\label{eq:linearized_lateral_dynamics}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color red
+notice that this is the convention used in Etkin 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "etkin"
+literal "true"
+
+\end_inset
+
+, which is found to be so confusing anyway
+\color inherit
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I_{x}'=\frac{I_{z}}{I_{z}I_{x}-I_{zx}^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I_{z}'=\frac{I_{x}}{I_{z}I_{x}-I_{zx}^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I_{zx}'=\frac{I_{z}I_{x}-I_{zx}^{2}}{I_{zx}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and equations:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\dot{\psi}=r\sec\theta_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\dot{y}_{E}=u_{0}\cos\theta_{0}\,\,\psi+v
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For our specific airplane (Jetstar):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\frac{d}{dt}\begin{bmatrix}v\\
+p\\
+r\\
+\phi
+\end{bmatrix} & = & \begin{bmatrix}-0.0618 & 0.1219 & -0.9925 & 0.0508\\
+-0.0047 & -0.4920 & 0.0936 & 0\\
+0.0028 & -0.0758 & -0.0994 & 0\\
+0 & 1 & 0.1228 & 0
+\end{bmatrix}\begin{bmatrix}v\\
+p\\
+r\\
+\phi
+\end{bmatrix}\\
+ &  & +\begin{bmatrix}0 & 1.7100\\
+-0.0831 & 0.7660\\
+0.0144 & -0.8360\\
+0 & 0
+\end{bmatrix}\begin{bmatrix}\delta_{a}\\
+\delta_{r}
+\end{bmatrix}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Longitudinal Mode Approximations
+\end_layout
+
+\begin_layout Standard
+The numerical solutions for the the full linearized system does not give
+ much physical insight into their genesis, but if we consider some simpler
+ modes are only a combination of mass-spring-damper and mass-spring systems,
+ this might give an insight on what parameters in the model equivalently
+ represent the parameters of the mass-spring-damper system, so we now need
+ approximate analytical solutions, this can be achieved in two ways:
+\end_layout
+
+\begin_layout Enumerate
+to assume that the mode is either only due to two small real eigenvalues
+ and neglect the larger (faster) ones 
+\begin_inset Formula $D\lambda+E=0$
+\end_inset
+
+ or if complex eigenvalues exist then 
+\begin_inset Formula $C\lambda^{2}+D\lambda+E=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+to consider the states that are most dominant in a specific response as
+ a separate mode.
+\end_layout
+
+\begin_layout Standard
+The method used here is the second method to obtain mode approximations,
+ which depends on the physical intuition of what states affect the mode
+ and what states don't.
+ 
+\color red
+Please note that all stability derivatives in this section are the ones
+ normalized by 
+\begin_inset Formula $m$
+\end_inset
+
+, 
+\begin_inset Formula $I_{x}$
+\end_inset
+
+, 
+\begin_inset Formula $I_{y}$
+\end_inset
+
+, or 
+\begin_inset Formula $I_{z}$
+\end_inset
+
+.
+\color inherit
+
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Short Period Approximations
+\end_layout
+
+\begin_layout Standard
+The short period is a mode where speed is relatively constant while the
+ pitch and pitch rate are changing rapidly, therefore by assuming 
+\begin_inset Formula $\Delta u=0$
+\end_inset
+
+, 
+\color red
+Etkin 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "etkin"
+literal "true"
+
+\end_inset
+
+ ignored 
+\begin_inset Formula $Z_{\dot{w}}$
+\end_inset
+
+ because it is small relative to 
+\begin_inset Formula $m$
+\end_inset
+
+ and ignored 
+\begin_inset Formula $Z_{q}$
+\end_inset
+
+ because it is small relative to 
+\begin_inset Formula $mu_{0}$
+\end_inset
+
+
+\color inherit
+, but this is not done here, so:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{bmatrix}\dot{w}\\
+\dot{q}
+\end{bmatrix}=\begin{bmatrix}\frac{Z_{w}}{1-Z_{\dot{w}}} & \frac{Z_{q}+u_{0}}{1-Z_{\dot{w}}}\\
+M_{w}+M_{\dot{w}}\frac{Z_{w}}{1-Z_{\dot{w}}} & M_{q}+M_{\dot{w}}\frac{Z_{q}+u_{0}}{1-Z_{\dot{w}}}
+\end{bmatrix}\begin{bmatrix}w\\
+q
+\end{bmatrix}+\begin{bmatrix}\frac{Z_{\delta_{e}}}{1-Z_{\dot{w}}} & \frac{Z_{\delta_{th}}}{1-Z_{\dot{w}}}\\
+M_{\delta_{a}}+\frac{M_{\dot{w}}Z_{\delta_{e}}}{1-Z_{\dot{w}}} & M_{\delta_{th}}+\frac{M_{\dot{w}}Z_{\delta_{th}}}{1-Z_{\dot{w}}}
+\end{bmatrix}\begin{bmatrix}\delta_{e}\\
+\delta_{th}
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Long Period (Phugoid) Approximations
+\end_layout
+
+\begin_layout Standard
+In this mode approximation we assume that the values of both 
+\begin_inset Formula $\dot{w}$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+ are relatively small, so we can ignore the stability derivatives 
+\begin_inset Formula $Z_{\dot{w}}$
+\end_inset
+
+, 
+\begin_inset Formula $M_{\dot{w}}$
+\end_inset
+
+ and 
+\begin_inset Formula $M_{q}$
+\end_inset
+
+, and also assume 
+\begin_inset Formula $\dot{q}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d}{dt}\begin{bmatrix}u\\
+\theta
+\end{bmatrix}=\begin{bmatrix}X_{u} & -g\\
+\frac{-Z_{u}}{Z_{q}+u_{0}} & 0
+\end{bmatrix}\begin{bmatrix}u\\
+\theta
+\end{bmatrix}+\begin{bmatrix}X_{\delta_{e}} & X_{\delta_{th}}\\
+\frac{-Z_{\delta_{e}}}{Z_{q}+u_{0}} & \frac{-Z_{\delta_{th}}}{Z_{q}+u_{0}}
+\end{bmatrix}\begin{bmatrix}\delta_{e}\\
+\delta_{th}
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Frequency Domain
+\end_layout
+
+\begin_layout Standard
+Here we analyze all the linear systems we obtained in the frequency domain,
+ we notice that the bode plots, as well as the root locus plots are much
+ more consistent (with respect to how much the approximations align with
+ the full linearized model) than appears in the responses of the systems.
+\end_layout
+
+\begin_layout Standard
+Notice the notation used here:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+lin
+\begin_inset Quotes erd
+\end_inset
+
+ means full linearized model
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+lp
+\begin_inset Quotes erd
+\end_inset
+
+ means long period mode
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+sp
+\begin_inset Quotes erd
+\end_inset
+
+ means short period
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset External
+	template PDFPages
+	filename frequency_domain_long.pdf
+	extra LaTeX "pages=-"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Response Comparison for Different Control Inputs
+\end_layout
+
+\begin_layout Standard
+Unlike the frequency domain plots, it didn't appear that the responses of
+ the approximations are going along with the nonlinear model at all, but
+ it is noted that the variables 
+\begin_inset Formula $w$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+ due to short period approximation are not bad; the general behaviour of
+ the response is accepted.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $dE=1^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=1,dTH=0,dA=0,dR=0__1.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=1,dTH=0,dA=0,dR=0__2.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=1,dTH=0,dA=0,dR=0__3.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=1,dTH=0,dA=0,dR=0__4.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $dE=5^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=5,dTH=0,dA=0,dR=0__1.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=5,dTH=0,dA=0,dR=0__2.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=5,dTH=0,dA=0,dR=0__3.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=5,dTH=0,dA=0,dR=0__4.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $dE=25^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=25,dTH=0,dA=0,dR=0__1.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=25,dTH=0,dA=0,dR=0__2.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=25,dTH=0,dA=0,dR=0__3.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=25,dTH=0,dA=0,dR=0__4.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $dTH=2000$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0,dTH=2000,dA=0,dR=0__1.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0,dTH=2000,dA=0,dR=0__2.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0,dTH=2000,dA=0,dR=0__3.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0,dTH=2000,dA=0,dR=0__4.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $dTH=10000$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0,dTH=10000,dA=0,dR=0__1.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0,dTH=10000,dA=0,dR=0__2.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0,dTH=10000,dA=0,dR=0__3.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0,dTH=10000,dA=0,dR=0__4.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Lateral Modes Approximations
+\end_layout
+
+\begin_layout Subsection
+1DOF Approximation (Roll Mode)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\dot{p}=L_{p}'p+L_{\delta_{a}}'\delta_{a}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+2DOF Approximation (Dutch Roll Mode)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{bmatrix}\dot{v}\\
+\dot{r}
+\end{bmatrix}=\begin{bmatrix}Y_{v} & -u_{0}-Y_{r}\\
+N_{v}' & N_{r}'
+\end{bmatrix}\begin{bmatrix}v\\
+r
+\end{bmatrix}+\begin{bmatrix}Y_{\delta_{a}} & Y_{\delta_{r}}\\
+N_{\delta_{a}}' & N_{\delta_{r}}'
+\end{bmatrix}\begin{bmatrix}\delta_{a}\\
+\delta_{r}
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+3DOF Approximation (Dutch Roll Mode)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{bmatrix}\dot{v}\\
+\dot{p}\\
+\dot{r}
+\end{bmatrix}=\begin{bmatrix}Y_{v} & 0 & -u_{0}-Y_{r}\\
+L_{v}' & L_{p}' & 0\\
+N_{v}' & 0 & N_{r}'
+\end{bmatrix}\begin{bmatrix}v\\
+p\\
+r
+\end{bmatrix}+\begin{bmatrix}Y_{\delta_{a}} & Y_{\delta_{r}}\\
+L_{\delta_{a}}' & L_{\delta_{r}}'\\
+N_{\delta_{a}}' & N_{\delta_{r}}'
+\end{bmatrix}\begin{bmatrix}\delta_{a}\\
+\delta_{r}
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+3DOF Approximation (Spiral Mode)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{bmatrix}\dot{p}\\
+\dot{r}\\
+\dot{\phi}
+\end{bmatrix}=\begin{bmatrix}L_{p}' & L_{r}' & 0\\
+N_{p}' & N_{r}' & 0\\
+1 & 0 & 0
+\end{bmatrix}\begin{bmatrix}p\\
+r\\
+\phi
+\end{bmatrix}+\begin{bmatrix}L_{\delta_{r}}\\
+N_{\delta_{r}}'\\
+0
+\end{bmatrix}\begin{bmatrix}\delta_{r}\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Lateral Modes Frequency Domain
+\end_layout
+
+\begin_layout Standard
+Notice the notation used here:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+lin
+\begin_inset Quotes erd
+\end_inset
+
+ means full linearized model
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+1DOF
+\begin_inset Quotes erd
+\end_inset
+
+ means the 1degrees of freedom Rolling mode
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+2DOF
+\begin_inset Quotes erd
+\end_inset
+
+ means the 2 degrees of freedom Dutch-Roll mode
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+3DOF_DR
+\begin_inset Quotes erd
+\end_inset
+
+ means the 3 degrees of freedom Dutch-Roll mode
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+3DOF
+\begin_inset Quotes erd
+\end_inset
+
+ means the 3 degrees of freedom Spiral mode
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset External
+	template PDFPages
+	filename frequency_domain_lat.pdf
+	extra LaTeX "pages=-"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Response Comparison for Different Control Inputs
+\end_layout
+
+\begin_layout Standard
+Out of all the responses, it seems that the 2DOF Dutch-Roll mode approximation
+ is very good in most cases, at least better than all other approximations.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $dA=1^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=1 [deg], dR=0 [deg]__5.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=1 [deg], dR=0 [deg]__6.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=1 [deg], dR=0 [deg]__7.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=1 [deg], dR=0 [deg]__8.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $dA=5^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=5 [deg], dR=0 [deg]__5.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=5 [deg], dR=0 [deg]__6.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=5 [deg], dR=0 [deg]__7.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=5 [deg], dR=0 [deg]__8.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $dA=10^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=10 [deg], dR=0 [deg]__5.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=10 [deg], dR=0 [deg]__6.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=10 [deg], dR=0 [deg]__7.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=10 [deg], dR=0 [deg]__8.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $dA=25^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=25 [deg], dR=0 [deg]__5.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=25 [deg], dR=0 [deg]__6.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=25 [deg], dR=0 [deg]__7.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=25 [deg], dR=0 [deg]__8.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $dR=1^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=0 [deg], dR=1 [deg]__5.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=0 [deg], dR=1 [deg]__6.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=0 [deg], dR=1 [deg]__7.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=0 [deg], dR=1 [deg]__8.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $dR=5^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=0 [deg], dR=5 [deg]__5.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=0 [deg], dR=5 [deg]__6.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=0 [deg], dR=5 [deg]__7.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=0 [deg], dR=5 [deg]__8.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $dR=10^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=0 [deg], dR=10 [deg]__5.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=0 [deg], dR=10 [deg]__6.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=0 [deg], dR=10 [deg]__7.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=0 [deg], dR=10 [deg]__8.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $dR=25^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=0 [deg], dR=25 [deg]__5.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=0 [deg], dR=25 [deg]__6.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=0 [deg], dR=25 [deg]__7.svg
+	width 40page%
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Controls: dE=0 [deg], dTH=0, dA=0 [deg], dR=25 [deg]__8.svg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Appendix
+\end_layout
+
+\begin_layout Section*
+Simulink Code
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Simulink Subsystems.png
+	width 75page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulink Subsystems
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Screenshot from 2025-03-01 02-28-47.png
+	width 75page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pilot Subsystem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Screenshot from 2025-03-01 02-28-58.png
+	width 75page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Airframe Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Screenshot from 2025-03-01 02-29-10.png
+	width 75page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+RBD Solver Subsystem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Visualization Subsystem.png
+	width 75page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Visualization & Post-Processing Subsystem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Linearized Model.png
+	width 75page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Full Linearized Model Subsystem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Matlab Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "/home/ahmed/ENG/4/2/Autopilot/Autopilot/Code/Unused Code/nonlinear_simulator.m"
+lstparams "language=Matlab,frame=rBL,frameround=fttt,xleftmargin={\\fboxsep},xrightmargin={-\\fboxsep},caption={nonlinear\\_simulator.m},label={nonlinear_simulator.m}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "/home/ahmed/ENG/4/2/Autopilot/Autopilot/Code/Unused Code/RK4.m"
+lstparams "language=Matlab,frame=rBL,frameround=fttt,xleftmargin={\\fboxsep},xrightmargin={-\\fboxsep},caption={RK4.m},label={RK4.m}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "/home/ahmed/ENG/4/2/Autopilot/Autopilot/Code/Unused Code/Fdot.m"
+lstparams "language=Matlab,frame=rBL,frameround=fttt,xleftmargin={\\fboxsep},xrightmargin={-\\fboxsep},caption={Fdot.m},label={Fdot.m}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "/home/ahmed/ENG/4/2/Autopilot/Autopilot/Code/Unused Code/forces_moments.m"
+lstparams "language=Matlab,frame=rBL,frameround=fttt,xleftmargin={\\fboxsep},xrightmargin={-\\fboxsep},caption={forces\\_moments.m},label={forces_moments.m}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "/home/ahmed/ENG/4/2/Autopilot/Autopilot/Code/aircraft_data_reader.m"
+lstparams "language=Matlab,frame=rBL,frameround=fttt,xleftmargin={\\fboxsep},xrightmargin={-\\fboxsep},caption={aircraft\\_data\\_reader.m},label={aircraft_data_reader}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "/home/ahmed/ENG/4/2/Autopilot/Autopilot/Code/pre_simulink.m"
+lstparams "language=Matlab,frame=rBL,frameround=fttt,xleftmargin={\\fboxsep},xrightmargin={-\\fboxsep},caption={pre\\_simulink.m},label={pre_simulink}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintAll"
+bibfiles "citations"
+options "bibtotoc,/home/ahmed/vancouver"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

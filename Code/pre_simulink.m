@@ -3,14 +3,14 @@ close all
 clc
 
 %% Problem Setup
-tfinal = 50; % final time
+tfinal = 5; % final time
 % n_iter = 200001;
 % dt = tf/(n_iter-1); % time step
 dt = 0.01;
 t = (0:dt:tfinal).'; % Time Vector
 
 % controls = [0; 0; 0; 0];
-dE = 0 *pi/180;
+dE = 5 *pi/180;
 dTH = 0;
 dA = 0 *pi/180;
 dR = 0 *pi/180;
@@ -18,7 +18,7 @@ dR = 0 *pi/180;
 aircraft_data_reader;
 % Bus Creation
 States_Bus_Creator;
-Controls_Bus_Creator;
+% Controls_Bus_Creator;
 initial_states_bus.u = s0(1);
 initial_states_bus.v = s0(2);
 initial_states_bus.w = s0(3);
@@ -61,8 +61,8 @@ D_longitudinal_lp = zeros(2,2);
 
 %% Lateral Dynamics
 A_lateral = [YV , (W0+YP) , -U0+YR, g*cos(theta0), 0;...
-        LB_DASH , LP_DASH , LR_DASH , 0 , 0;...
-        NB_DASH , NP_DASH , NR_DASH , 0 , 0;...
+        LV_DASH , LP_DASH , LR_DASH , 0 , 0;...
+        NV_DASH , NP_DASH , NR_DASH , 0 , 0;...
         0 , 1 , tan(theta0) , 0 , 0;...
         0 , 0 , 1/cos(theta0) ,0 ,0];
 B_lateral = [YDA , YDR;...
@@ -119,85 +119,85 @@ fprintf("Finished Solving SIMULINK Code\n");
 %% Plot
 title_name = strcat("Controls: dE=",num2str(dE*180/pi), " [deg], dTH=",num2str(dTH), ", dA=",num2str(dA*180/pi), " [deg], dR=",num2str(dR*180/pi), " [deg]");
 
-% fig1 = figure;
-% plot(out.time.Data, rad2deg(out.alpha.Data), 'LineWidth', 2);
-% hold on;
-% plot(out.time.Data, rad2deg(out.alpha_lin.Data), 'LineWidth', 2);
-% plot(out.time.Data, rad2deg(atan(out.w_short_period.Data/U0)), 'LineWidth', 2);
-% xlabel("t [s]"); ylabel("w [ft/s]");
-% legend("Nonlinear", "Linearized", "Short Period")
-% title(title_name, 'interpreter', 'latex');
-% 
-% fig2 = figure;
-% plot(out.time.Data, rad2deg(out.q.Data), 'LineWidth', 2)
-% hold on;
-% plot(out.time.Data, rad2deg(out.q_lin.Data), 'LineWidth', 2)
-% plot(out.time.Data, rad2deg(out.q_short_period.Data), '--', 'LineWidth', 2)
-% xlabel("t [s]"); ylabel("q [deg/s]");
-% legend("Nonlinear", "Linearized", "Short Period")
-% title(title_name, 'interpreter', 'latex');
-% 
-% fig3 = figure;
-% plot(out.time.Data, out.u.Data, 'LineWidth', 2)
-% hold on
-% plot(out.time.Data, out.u_lin.Data, 'LineWidth', 2)
-% plot(out.time.Data, out.u_long_period.Data, 'LineWidth', 2)
-% xlabel("t [s]"); ylabel("u [ft/s]");
-% legend("Nonlinear", "Linearized", "Long Period")
-% title(title_name, 'interpreter', 'latex');
-% 
-% fig4 = figure;
-% plot(out.time.Data, rad2deg(out.theta.Data), 'LineWidth', 2)
-% hold on
-% plot(out.time.Data, rad2deg(out.theta_lin.Data), 'LineWidth', 2)
-% plot(out.time.Data, rad2deg(out.theta_long_period.Data), 'LineWidth', 2)
-% xlabel("t [s]"); ylabel("theta [deg]");
-% legend("Nonlinear", "Linearized", "Long Period")
-% title(title_name, 'interpreter', 'latex');
+fig1 = figure;
+plot(out.time.Data, rad2deg(out.alpha.Data), 'LineWidth', 2);
+hold on;
+plot(out.time.Data, rad2deg(out.alpha_lin.Data), 'LineWidth', 2);
+plot(out.time.Data, rad2deg(atan(out.w_short_period.Data/U0)), 'LineWidth', 2);
+xlabel("t [s]"); ylabel("w [ft/s]");
+legend("Nonlinear", "Linearized", "Short Period")
+title(title_name, 'interpreter', 'latex');
+
+fig2 = figure;
+plot(out.time.Data, rad2deg(out.q.Data), 'LineWidth', 2)
+hold on;
+plot(out.time.Data, rad2deg(out.q_lin.Data), 'LineWidth', 2)
+plot(out.time.Data, rad2deg(out.q_short_period.Data), '--', 'LineWidth', 2)
+xlabel("t [s]"); ylabel("q [deg/s]");
+legend("Nonlinear", "Linearized", "Short Period")
+title(title_name, 'interpreter', 'latex');
+
+fig3 = figure;
+plot(out.time.Data, out.u.Data, 'LineWidth', 2)
+hold on
+plot(out.time.Data, out.u_lin.Data, 'LineWidth', 2)
+plot(out.time.Data, out.u_long_period.Data, 'LineWidth', 2)
+xlabel("t [s]"); ylabel("u [ft/s]");
+legend("Nonlinear", "Linearized", "Long Period")
+title(title_name, 'interpreter', 'latex');
+
+fig4 = figure;
+plot(out.time.Data, rad2deg(out.theta.Data), 'LineWidth', 2)
+hold on
+plot(out.time.Data, rad2deg(out.theta_lin.Data), 'LineWidth', 2)
+plot(out.time.Data, rad2deg(out.theta_long_period.Data), 'LineWidth', 2)
+xlabel("t [s]"); ylabel("theta [deg]");
+legend("Nonlinear", "Linearized", "Long Period")
+title(title_name, 'interpreter', 'latex');
 
 % saveas(fig1, strcat(title_name, '__1'), 'svg');
 % saveas(fig2, strcat(title_name, '__2'), 'svg');
 % saveas(fig3, strcat(title_name, '__3'), 'svg');
 % saveas(fig4, strcat(title_name, '__4'), 'svg');
 
-fig5 = figure; hold on;
-plot(out.time.Data, out.v.Data, 'LineWidth', 2);
-plot(out.time.Data, out.v_lin.Data, 'LineWidth', 2);
-plot(out.time.Data, out.v_2DOF.Data, 'LineWidth', 2);
-plot(out.time.Data, out.v_3DOF_DR.Data, 'LineWidth', 2);
-xlabel("time [sec]"); ylabel("v [ft/s]");
-legend("Nonlinear", "Linearized", "2DOF", "3DOF\_DR");
-title(title_name, 'interpreter', 'latex');
-
-fig6 = figure; hold on;
-plot(out.time.Data, rad2deg(out.p.Data), 'LineWidth', 2);
-plot(out.time.Data, rad2deg(out.p_lin.Data), 'LineWidth', 2);
-plot(out.time.Data, rad2deg(out.p_1DOF.Data), 'LineWidth', 2);
-plot(out.time.Data, rad2deg(out.p_3DOF_DR.Data), 'LineWidth', 2);
-plot(out.time.Data, rad2deg(out.p_3DOF_SP.Data), 'LineWidth', 2);
-xlabel("time [sec]"); ylabel("p [deg/s]")
-legend("Nonlinear", "Linearized", "1DOF", "3DOF\_DR", "3DOF\_SP");
-title(title_name, 'interpreter', 'latex');
-
-fig7 = figure; hold on;
-plot(out.time.Data, rad2deg(out.r.Data), 'LineWidth', 2);
-plot(out.time.Data, rad2deg(out.r_lin.Data), 'LineWidth', 2);
-plot(out.time.Data, rad2deg(out.r_2DOF.Data), 'LineWidth', 2);
-plot(out.time.Data, rad2deg(out.r_3DOF_DR.Data), 'LineWidth', 2);
-plot(out.time.Data, rad2deg(out.r_3DOF_SP.Data), 'LineWidth', 2);
-xlabel("time [sec]"); ylabel("r [deg/s]");
-legend("Nonlinear", "Linearized", "2DOF", "3DOF\_DR", "3DOF\_SP");
-title(title_name, 'interpreter', 'latex');
-
-fig8 = figure; hold on;
-plot(out.time.Data, rad2deg(out.phi.Data), 'LineWidth', 2);
-plot(out.time.Data, rad2deg(out.phi_lin.Data), 'LineWidth', 2);
-plot(out.time.Data, rad2deg(out.phi_3DOF_SP.Data), 'LineWidth', 2);
-xlabel("time [sec]"); ylabel("\phi [deg]");
-legend("Nonlinear", "Linearized", "3DOF\_SP");
-title(title_name, 'interpreter', 'latex');
-
-saveas(fig5, strcat(title_name, '__5'), 'svg');
-saveas(fig6, strcat(title_name, '__6'), 'svg');
-saveas(fig7, strcat(title_name, '__7'), 'svg');
-saveas(fig8, strcat(title_name, '__8'), 'svg');
+% fig5 = figure; hold on;
+% plot(out.time.Data, out.v.Data, 'LineWidth', 2);
+% plot(out.time.Data, out.v_lin.Data, 'LineWidth', 2);
+% plot(out.time.Data, out.v_2DOF.Data, 'LineWidth', 2);
+% plot(out.time.Data, out.v_3DOF_DR.Data, 'LineWidth', 2);
+% xlabel("time [sec]"); ylabel("v [ft/s]");
+% legend("Nonlinear", "Linearized", "2DOF", "3DOF\_DR");
+% title(title_name, 'interpreter', 'latex');
+% 
+% fig6 = figure; hold on;
+% plot(out.time.Data, rad2deg(out.p.Data), 'LineWidth', 2);
+% plot(out.time.Data, rad2deg(out.p_lin.Data), 'LineWidth', 2);
+% plot(out.time.Data, rad2deg(out.p_1DOF.Data), 'LineWidth', 2);
+% plot(out.time.Data, rad2deg(out.p_3DOF_DR.Data), 'LineWidth', 2);
+% plot(out.time.Data, rad2deg(out.p_3DOF_SP.Data), 'LineWidth', 2);
+% xlabel("time [sec]"); ylabel("p [deg/s]")
+% legend("Nonlinear", "Linearized", "1DOF", "3DOF\_DR", "3DOF\_SP");
+% title(title_name, 'interpreter', 'latex');
+% 
+% fig7 = figure; hold on;
+% plot(out.time.Data, rad2deg(out.r.Data), 'LineWidth', 2);
+% plot(out.time.Data, rad2deg(out.r_lin.Data), 'LineWidth', 2);
+% plot(out.time.Data, rad2deg(out.r_2DOF.Data), 'LineWidth', 2);
+% plot(out.time.Data, rad2deg(out.r_3DOF_DR.Data), 'LineWidth', 2);
+% plot(out.time.Data, rad2deg(out.r_3DOF_SP.Data), 'LineWidth', 2);
+% xlabel("time [sec]"); ylabel("r [deg/s]");
+% legend("Nonlinear", "Linearized", "2DOF", "3DOF\_DR", "3DOF\_SP");
+% title(title_name, 'interpreter', 'latex');
+% 
+% fig8 = figure; hold on;
+% plot(out.time.Data, rad2deg(out.phi.Data), 'LineWidth', 2);
+% plot(out.time.Data, rad2deg(out.phi_lin.Data), 'LineWidth', 2);
+% plot(out.time.Data, rad2deg(out.phi_3DOF_SP.Data), 'LineWidth', 2);
+% xlabel("time [sec]"); ylabel("\phi [deg]");
+% legend("Nonlinear", "Linearized", "3DOF\_SP");
+% title(title_name, 'interpreter', 'latex');
+% 
+% saveas(fig5, strcat(title_name, '__5'), 'svg');
+% saveas(fig6, strcat(title_name, '__6'), 'svg');
+% saveas(fig7, strcat(title_name, '__7'), 'svg');
+% saveas(fig8, strcat(title_name, '__8'), 'svg');
