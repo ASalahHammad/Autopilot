@@ -124,11 +124,11 @@ legend("Matlab", "Simulink", "Benchmark Test", "Location", "southeast");
 xlabel("$t$ [s]", 'interpreter', 'latex', 'fontSize', 12);
 
 %% Print Figures
-saveas(fig1, strcat(case_name, '1'), 'svg');
-saveas(fig2, strcat(case_name, '2'), 'svg');
-saveas(fig3, strcat(case_name, '3'), 'svg');
-saveas(fig4, strcat(case_name, '4'), 'svg');
-saveas(fig5, strcat(case_name, '5'), 'svg');
+% saveas(fig1, strcat(case_name, '1'), 'svg');
+% saveas(fig2, strcat(case_name, '2'), 'svg');
+% saveas(fig3, strcat(case_name, '3'), 'svg');
+% saveas(fig4, strcat(case_name, '4'), 'svg');
+% saveas(fig5, strcat(case_name, '5'), 'svg');
 
 %% Mean Squared Error
 if(~isempty(Benchmark_states))
