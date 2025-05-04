@@ -16,8 +16,18 @@ sdot0 = zeros(12,1);
 Vto = sqrt(s0(1)^2 + s0(2)^2 + s0(3)^2);
 
 U0 = s0(1);
+V0 = s0(2);
 W0 = s0(3);
-theta0 = s0(8);
+P0 = s0(4);
+Q0 = s0(5);
+R0 = s0(6);
+PHI0 = s0(7);
+THETA0 = s0(8);
+PSI0 = s0(9);
+X0 = 0;
+Y0 = 0;
+Z0 = 0;
+ALPHA0 = THETA0;
 
 % control actions values
 % da = aircraft_data(57);
@@ -33,8 +43,8 @@ Ixx = aircraft_data(53);
 Iyy = aircraft_data(54);
 Izz = aircraft_data(55);
 Ixz = aircraft_data(56);    Ixy=0;  Iyz=0;
-I = [Ixx , -Ixy , -Ixz ;...
-    -Ixy , Iyy , -Iyz ;...
+I = [Ixx , -Ixy , -Ixz ;
+    -Ixy , Iyy , -Iyz ;
     -Ixz , -Iyz , Izz];
 invI=inv(I);
 
@@ -128,3 +138,12 @@ Controls_Matrix = [0,    XDE,   XDTH,      0;
                    LDA,  0,      0       LDR;
                    0,    MDE,    MDTH,     0;
                    NDA,  0,      0,       NDR];
+
+
+rho = 5.87e-4; % (slugs/ft^3)
+CD_alpha = 0.7;
+CD = CD_alpha * ALPHA0;
+Qinf = 117; % (PSF)
+S = 542.5; % (FT^2)
+Thrust0 = 0.5*rho*Vto^2*S*CD; % (LBF)
+Thrustmax = 14800; % (LBF)
