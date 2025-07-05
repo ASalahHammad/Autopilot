@@ -142,7 +142,7 @@ OL_phi_phiCMD = minreal(servo * OL_coordinated_tf(4, 1));
 load("./Autopilot Data/AileronFromRoll.mat");
 
 %% Simulation Time
-tfinal = 200; % final time
+tfinal = 20; % final time
 dt = 0.01;
 
 %% Bus Creation
@@ -270,14 +270,15 @@ fprintf("Finished Solving SIMULINK Code\n");
 % ylabel("$\beta$ $[^\circ]$", 'Interpreter', 'latex');
 % subplot(6,1,5);
 % grid on; hold on;
-% plot(out.time.Data, rad2deg(out.dr.Data), 'k', "LineWidth",2);
+% plot(out.time.Data, rad2deg(out.dr_lin.Data), 'k', "LineWidth",2);
 % xlabel("$t$ [s]", 'Interpreter', 'latex');
 % ylabel("$d_R$ $[^\circ]$", 'Interpreter', 'latex');
 % subplot(6,1,6);
 % grid on; hold on;
-% plot(out.time.Data, rad2deg(out.da.Data), 'k', "LineWidth",2);
+% plot(out.time.Data, rad2deg(out.da_lin.Data), 'k', "LineWidth",2);
 % xlabel("$t$ [s]", 'Interpreter', 'latex');
 % ylabel("$d_A$ $[^\circ]$", 'Interpreter', 'latex');
+% saveas(somefig, "yawDamperTest", 'png')
 
 % fig10 = figure;
 % subplot(1,2,1);
@@ -295,65 +296,65 @@ fprintf("Finished Solving SIMULINK Code\n");
 % legend("\theta", "\theta_{CMD}", 'Location', 'best');
 % title("$Pitch Angle$ $\theta$ Nonlinear Autopilot", 'interpreter', 'latex');
 % 
-fig11 = figure;
-subplot(1,2,1);
-grid on; hold on;
-plot(out.time.Data, out.altitude_lin.Data, 'LineWidth', 2);
-% plot(out.time.Data, out.h_CMDlin.Data, 'LineWidth', 2);
-xlabel("t [s]"); ylabel("h [ft]");
-% legend("h_{linear}", "h_{CMD}", 'Location', 'best');
-title("$Altitude$ $h$ Linear Autopilot", 'interpreter', 'latex');
-subplot(1,2,2);
-grid on; hold on;
-plot(out.time.Data, out.altitude.Data, 'LineWidth', 2);
-% plot(out.time.Data, out.h_CMD.Data, 'LineWidth', 2);
-xlabel("t [s]"); ylabel("h [ft]");
-% legend("h_{nonlinear}", "h_{CMD}", 'Location', 'best');
-title("$Altitude$ $h$ Nonlinear Autopilot", 'interpreter', 'latex');
-
-fig12 = figure;
-subplot(1,2,1);
-grid on; hold on;
-plot(out.time.Data, rad2deg(out.phi_lin.Data), 'LineWidth', 2);
-plot(out.time.Data, rad2deg(out.phi_CMDlin.Data), 'LineWidth', 2);
-xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\phi$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
-legend("\phi_{linear}", "\phi_{CMD}", 'Location', 'best');
-title("$Roll Angle$ $\phi$ Linear Autopilot", 'interpreter', 'latex');
-subplot(1,2,2);
-grid on; hold on;
-plot(out.time.Data, rad2deg(out.phi.Data), 'LineWidth', 2);
-plot(out.time.Data, rad2deg(out.phi_CMD.Data), 'LineWidth', 2);
-xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\phi$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
-legend("\phi_{nonlinear}", "\phi_{CMD}", 'Location', 'best');
-title("$Roll Angle$ $\phi$ Nonlinear Autopilot", 'interpreter', 'latex');
-
-fig13 = figure;
-subplot(1,2,1);
-grid on; hold on;
-plot(out.time.Data, rad2deg(out.psi_lin.Data), 'LineWidth', 2);
-plot(out.time.Data, rad2deg(out.psi_CMDlin.Data), 'LineWidth', 2);
-xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\psi$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
-legend("\psi_{linear}", "\psi_{CMD}", 'Location', 'best');
-title("$Heading Angle$ $\psi$ Linear Autopilot", 'interpreter', 'latex');
-subplot(1,2,2);
-grid on; hold on;
-plot(out.time.Data, rad2deg(out.psi.Data), 'LineWidth', 2);
-plot(out.time.Data, rad2deg(out.psi_CMD.Data), 'LineWidth', 2);
-xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\psi$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
-legend("\psi_{nonlinear}", "\psi_{CMD}", 'Location', 'best');
-title("$Heading Angle$ $\psi$ Nonlinear Autopilot", 'interpreter', 'latex');
-
-fig14 = figure;
-subplot(1,2,1);
-grid on; hold on;
-plot(out.time.Data, rad2deg(out.beta_lin.Data), 'LineWidth', 2);
-xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\beta$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
-title("$Sideslip Angle$ $\beta$ Linear Autopilot", 'interpreter', 'latex');
-subplot(1,2,2);
-grid on; hold on;
-plot(out.time.Data, rad2deg(out.beta.Data), 'LineWidth', 2);
-xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\beta$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
-title("$Sideslip Angle$ $\beta$ Nonlinear Autopilot", 'interpreter', 'latex');
+% fig11 = figure;
+% subplot(1,2,1);
+% grid on; hold on;
+% plot(out.time.Data, out.altitude_lin.Data, 'LineWidth', 2);
+% % plot(out.time.Data, out.h_CMDlin.Data, 'LineWidth', 2);
+% xlabel("t [s]"); ylabel("h [ft]");
+% % legend("h_{linear}", "h_{CMD}", 'Location', 'best');
+% title("$Altitude$ $h$ Linear Autopilot", 'interpreter', 'latex');
+% subplot(1,2,2);
+% grid on; hold on;
+% plot(out.time.Data, out.altitude.Data, 'LineWidth', 2);
+% % plot(out.time.Data, out.h_CMD.Data, 'LineWidth', 2);
+% xlabel("t [s]"); ylabel("h [ft]");
+% % legend("h_{nonlinear}", "h_{CMD}", 'Location', 'best');
+% title("$Altitude$ $h$ Nonlinear Autopilot", 'interpreter', 'latex');
+% 
+% fig12 = figure;
+% subplot(1,2,1);
+% grid on; hold on;
+% plot(out.time.Data, rad2deg(out.phi_lin.Data), 'LineWidth', 2);
+% plot(out.time.Data, rad2deg(out.phi_CMDlin.Data), 'LineWidth', 2);
+% xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\phi$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
+% legend("\phi_{linear}", "\phi_{CMD}", 'Location', 'best');
+% title("$Roll Angle$ $\phi$ Linear Autopilot", 'interpreter', 'latex');
+% subplot(1,2,2);
+% grid on; hold on;
+% plot(out.time.Data, rad2deg(out.phi.Data), 'LineWidth', 2);
+% plot(out.time.Data, rad2deg(out.phi_CMD.Data), 'LineWidth', 2);
+% xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\phi$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
+% legend("\phi_{nonlinear}", "\phi_{CMD}", 'Location', 'best');
+% title("$Roll Angle$ $\phi$ Nonlinear Autopilot", 'interpreter', 'latex');
+% 
+% fig13 = figure;
+% subplot(1,2,1);
+% grid on; hold on;
+% plot(out.time.Data, rad2deg(out.psi_lin.Data), 'LineWidth', 2);
+% plot(out.time.Data, rad2deg(out.psi_CMDlin.Data), 'LineWidth', 2);
+% xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\psi$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
+% legend("\psi_{linear}", "\psi_{CMD}", 'Location', 'best');
+% title("$Heading Angle$ $\psi$ Linear Autopilot", 'interpreter', 'latex');
+% subplot(1,2,2);
+% grid on; hold on;
+% plot(out.time.Data, rad2deg(out.psi.Data), 'LineWidth', 2);
+% plot(out.time.Data, rad2deg(out.psi_CMD.Data), 'LineWidth', 2);
+% xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\psi$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
+% legend("\psi_{nonlinear}", "\psi_{CMD}", 'Location', 'best');
+% title("$Heading Angle$ $\psi$ Nonlinear Autopilot", 'interpreter', 'latex');
+% 
+% fig14 = figure;
+% subplot(1,2,1);
+% grid on; hold on;
+% plot(out.time.Data, rad2deg(out.beta_lin.Data), 'LineWidth', 2);
+% xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\beta$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
+% title("$Sideslip Angle$ $\beta$ Linear Autopilot", 'interpreter', 'latex');
+% subplot(1,2,2);
+% grid on; hold on;
+% plot(out.time.Data, rad2deg(out.beta.Data), 'LineWidth', 2);
+% xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\beta$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
+% title("$Sideslip Angle$ $\beta$ Nonlinear Autopilot", 'interpreter', 'latex');
 
 % fig15 = figure;
 % subplot(1,2,1);
@@ -379,29 +380,29 @@ title("$Sideslip Angle$ $\beta$ Nonlinear Autopilot", 'interpreter', 'latex');
 % xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\delta_{th}$ [lbf]", 'Interpreter', 'latex', 'FontSize',12);
 % title("$Thrust Action$ $\delta_{th}$ Nonlinear Autopilot", 'interpreter', 'latex');
 
-fig17 = figure;
-subplot(1,2,1);
-grid on; hold on;
-plot(out.time.Data, rad2deg(out.da_lin.Data), 'LineWidth', 2);
-xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\delta_a$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
-title("$Aileron Response$ $\delta_a$ Linear Autopilot", 'interpreter', 'latex');
-subplot(1,2,2);
-grid on; hold on;
-plot(out.time.Data, rad2deg(out.da.Data), 'LineWidth', 2);
-xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\delta_a$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
-title("$Aileron Action$ $\delta_a$ Nonlinear Autopilot", 'interpreter', 'latex');
-
-fig18 = figure;
-subplot(1,2,1);
-grid on; hold on;
-plot(out.time.Data, rad2deg(out.dr_lin.Data), 'LineWidth', 2);
-xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\delta_r$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
-title("$Rudder Response$ $\delta_r$ Linear Autopilot", 'interpreter', 'latex');
-subplot(1,2,2);
-grid on; hold on;
-plot(out.time.Data, rad2deg(out.dr.Data), 'LineWidth', 2);
-xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\delta_r$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
-title("$Rudder Action$ $\delta_r$ Nonlinear Autopilot", 'interpreter', 'latex');
+% fig17 = figure;
+% subplot(1,2,1);
+% grid on; hold on;
+% plot(out.time.Data, rad2deg(out.da_lin.Data), 'LineWidth', 2);
+% xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\delta_a$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
+% title("$Aileron Response$ $\delta_a$ Linear Autopilot", 'interpreter', 'latex');
+% subplot(1,2,2);
+% grid on; hold on;
+% plot(out.time.Data, rad2deg(out.da.Data), 'LineWidth', 2);
+% xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\delta_a$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
+% title("$Aileron Action$ $\delta_a$ Nonlinear Autopilot", 'interpreter', 'latex');
+% 
+% fig18 = figure;
+% subplot(1,2,1);
+% grid on; hold on;
+% plot(out.time.Data, rad2deg(out.dr_lin.Data), 'LineWidth', 2);
+% xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\delta_r$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
+% title("$Rudder Response$ $\delta_r$ Linear Autopilot", 'interpreter', 'latex');
+% subplot(1,2,2);
+% grid on; hold on;
+% plot(out.time.Data, rad2deg(out.dr.Data), 'LineWidth', 2);
+% xlabel("$t$ [s]", 'Interpreter', 'latex', 'FontSize',12); ylabel("$\delta_r$ [deg]", 'Interpreter', 'latex', 'FontSize',12);
+% title("$Rudder Action$ $\delta_r$ Nonlinear Autopilot", 'interpreter', 'latex');
 
 % fig19 = figure;
 % subplot(1,2,1);
@@ -432,14 +433,14 @@ title("$Rudder Action$ $\delta_r$ Nonlinear Autopilot", 'interpreter', 'latex');
 % title("$Velocity$ $h$ Nonlinear Autopilot", 'interpreter', 'latex');
 
 % saveas(fig10, "theta", 'svg')
-saveas(fig11, "h", 'svg')
-saveas(fig12, "phi", 'svg')
-saveas(fig13, "psi", 'svg')
-saveas(fig14, "beta", 'svg')
+% saveas(fig11, "h", 'svg')
+% saveas(fig12, "phi", 'svg')
+% saveas(fig13, "psi", 'svg')
+% saveas(fig14, "beta", 'svg')
 % saveas(fig15, "dE", 'svg')
 % saveas(fig16, "dTH", 'svg')
-saveas(fig17, "dA", 'svg')
-saveas(fig18, "dR", 'svg')
+% saveas(fig17, "dA", 'svg')
+% saveas(fig18, "dR", 'svg')
 % saveas(fig19, "gamma", 'svg')
 % saveas(fig20, "u", 'svg')
 

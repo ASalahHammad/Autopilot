@@ -26,7 +26,7 @@ THETA0 = s0(8);
 PSI0 = s0(9);
 X0 = 0;
 Y0 = 0;
-Z0 = 0;
+Z0 = -500; % this is to have a good visualization in flightgear
 ALPHA0 = THETA0;
 
 % control actions values

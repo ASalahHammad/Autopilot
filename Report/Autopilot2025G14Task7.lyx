@@ -5657,8 +5657,8 @@ In this mode approximation we assume that the values of both
 \[
 \frac{d}{dt}\begin{bmatrix}u\\
 \theta
-\end{bmatrix}=\begin{bmatrix}X_{u} & -g\\
-\frac{-Z_{u}}{Z_{q}+u_{0}} & 0
+\end{bmatrix}=\begin{bmatrix}X_{u} & -g\cos\left(\theta_{0}\right)\\
+\frac{-Z_{u}}{Z_{q}+u_{0}} & \frac{g\sin\left(\theta_{0}\right)}{Z_{q}+u_{0}}
 \end{bmatrix}\begin{bmatrix}u\\
 \theta
 \end{bmatrix}+\begin{bmatrix}X_{\delta_{e}} & X_{\delta_{th}}\\
@@ -7324,6 +7324,41 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Control Loops/ElevFromPitch.png
+	width 75page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Control Loop to calculate elevator command
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
 	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Elevator from Theta, thetaCMD 15.svg
 	width 40page%
 
@@ -7356,6 +7391,45 @@ Response at
 \end_inset
 
  on the right
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Pitch from Altitude
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Control Loops/PitchFromAltitude.png
+	width 75page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Control Loop to calculate pitch command
 \end_layout
 
 \end_inset
@@ -7412,8 +7486,39 @@ So idle thrust is:
  for each one of four engines.
 \end_layout
 
-\begin_layout Section
-Pitch from Altitude
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Control Loops/ThrottleFromAirspeed.png
+	width 75page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Control Loop to calculate throttle command
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Part
@@ -7541,6 +7646,41 @@ Yaw Damper Loop Architecture
 
 \end_layout
 
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Control Loops/YawDamper.png
+	width 75page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Control Loop to calculate rudder command
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Testing Yaw Damper Controller
 \end_layout
@@ -7552,6 +7692,7 @@ Throughout the previous design process, we focused on a single transfer
  To validate the performance of our designed controller within a more realistic
  setting, a simulation was conducted using the full MIMO (Multi-Input Multi-Outp
 ut) system represented by the lateral state-space model of the aircraft.
+ The result of the test is very unusual:
 \end_layout
 
 \begin_layout Standard
@@ -7622,6 +7763,41 @@ After we have implemented the yaw damper transfer function, we now needed
  dynamics, then we only needed a proportional gain for the design of the
  roll autopilot, but it was needed to operate on the complementary root
  locus.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Control Loops/AileronFromRoll.png
+	width 75page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Control Loop to calculate aileron command
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7825,7 +8001,52 @@ Response to
 
 \begin_layout Standard
 This is because the commanded roll angle isn't calculated from the heading
- rate, but was rather chosen arbitrarily.
+ rate, but was rather chosen arbitrarily, but for every heading rate, there's
+ an optimum roll angle, which is calculated using the Roll from Heading
+ Autopilot coming next.
+\end_layout
+
+\begin_layout Section
+Roll from Heading Autopilot
+\end_layout
+
+\begin_layout Standard
+This is modelled as a simple lag as follows:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Control Loops/RollFromHeading.png
+	width 75page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Control Loop to calculate roll angle command
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Part
@@ -8953,6 +9174,7 @@ status open
 
 \begin_layout Plain Layout
 \align center
+(Clb*Cnr)/(Clr*Cnb) = 1.577984 (>1 if spirally stable)
 \begin_inset Graphics
 	filename /home/ahmed/ENG/4/2/Autopilot/Autopilot/Images/Task 7/5 Longitudinal + Lateral/dTH.svg
 	width 65page%
